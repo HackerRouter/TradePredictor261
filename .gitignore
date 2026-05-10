@@ -1,0 +1,8 @@
+out/
+*.class
+config.json
+data/
+backup/
+TradePredictor261.jar
+MANIFEST.MF
+sources.txt
