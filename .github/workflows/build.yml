@@ -22,7 +22,7 @@ jobs:
       - name: Compile
         run: |
           mkdir -p out
-          javac -encoding UTF-8 -cp "lib/guava-32.1.3-jre.jar:lib/failureaccess-1.0.2.jar" -d out \
+          javac -encoding UTF-8 -cp "lib/guava-32.1.3-jre.jar:lib/failureaccess-1.0.2.jar:lib/gson-2.13.1.jar" -d out \
             *.java rng/*.java trade/*.java enchant/*.java functions/*.java mode/*.java io/*.java util/*.java
 
       - name: Extract dependencies into out/
@@ -30,6 +30,7 @@ jobs:
           cd out
           jar xf ../lib/guava-32.1.3-jre.jar
           jar xf ../lib/failureaccess-1.0.2.jar
+          jar xf ../lib/gson-2.13.1.jar
           rm -rf META-INF/*.SF META-INF/*.RSA META-INF/*.DSA
           cd ..
 
