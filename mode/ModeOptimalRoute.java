@@ -49,8 +49,9 @@ public class ModeOptimalRoute {
         System.out.println("\n" + I18n.get("optimal.title") + "\n");
 
         // 1. Select seed
-        long seed = SeedSelector.select(config);
-        if (seed == 0) return;
+        Long selectedSeed = SeedSelector.select(config);
+        if (selectedSeed == null) return;
+        long seed = selectedSeed;
 
         // 2. Select sub-mode
         List<String> subModes = Arrays.asList(

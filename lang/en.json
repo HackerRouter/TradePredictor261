@@ -22,16 +22,15 @@
   "input.yes_no_suffix": " (y/n): ",
 
   "seed.no_seed": "No world seed configured.",
-  "seed.enter_seed": "Enter world seed",
-  "seed.invalid_seed": "Invalid seed.",
+  "seed.enter_seed": "Enter world seed (number or text, same as in game)",
+  "seed.invalid_seed": "No seed entered.",
   "seed.current_seed": "Current world seed: {0}",
   "seed.use_seed": "Use seed {0}",
   "seed.input_new": "Input new seed",
   "seed.select_title": "Select seed:",
   "seed.active_marker": " (active)",
-  "seed.enter_new": "Enter new world seed",
-  "seed.invalid_using_existing": "Invalid seed, using existing.",
-  "seed.invalid_using_active": "Invalid seed, using active.",
+  "seed.enter_new": "Enter new world seed (number or text, same as in game)",
+  "seed.invalid_using_active": "No seed entered, using the active seed.",
 
   "config.title": "--- Current Config ---",
   "config.no_seeds": "No seeds configured.",
@@ -74,11 +73,7 @@
   "match.invalid_input": "Invalid input, try again.",
   "match.no_observations": "No observations entered.",
   "match.observed_count": "Observed {0} refresh(es).",
-  "match.data_exists_use": "Data file exists. Use existing data?",
-  "match.loaded_data": "Loaded data with {0} refreshes.",
-  "match.error_reading": "Error reading file: {0}",
-  "match.generate_how_many": "Generate how many refreshes?",
-  "match.no_data_generate": "No data file. Generate how many refreshes?",
+  "match.generate_how_many": "Search within how many refreshes?",
   "match.generating": "Generating {0} refreshes...",
   "match.searching": "Searching for match...",
   "match.no_match": "No match found in {0} refreshes!",
@@ -197,5 +192,8 @@
   "trade.discarded_no_enchantment": "Discarded (no enchantment)",
   "trade.discarded_no_dye": "Discarded (no dye)",
   "trade.discarded_map_unavailable": "Discarded (map unavailable)",
-  "trade.discarded_zero_cost": "Discarded (zero cost)"
+  "trade.discarded_zero_cost": "Discarded (zero cost)",
+  "seed.parsed": "World seed: {0}",
+  "result.refresh": "Refresh #{0}:",
+  "result.slot": "Slot {0}: "
 }

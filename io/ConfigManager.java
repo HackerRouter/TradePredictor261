@@ -40,11 +40,11 @@ public class ConfigManager {
         return activeSeedIndex;
     }
 
-    public long getActiveSeed() {
+    public Long getActiveSeed() {
         if (activeSeedIndex >= 0 && activeSeedIndex < seeds.size()) {
             return seeds.get(activeSeedIndex);
         }
-        return 0;
+        return null;
     }
 
     public void setActiveSeedIndex(int index) {
@@ -85,21 +85,21 @@ public class ConfigManager {
     }
 
     public int getTrackedIndex(String key) {
-        long seed = getActiveSeed();
-        if (seed == 0) return -1;
+        Long seed = getActiveSeed();
+        if (seed == null) return -1;
         return trackedIndices.getOrDefault(seed + "/" + key, -1);
     }
 
     public void setTrackedIndex(String key, int index) {
-        long seed = getActiveSeed();
-        if (seed == 0) return;
+        Long seed = getActiveSeed();
+        if (seed == null) return;
         trackedIndices.put(seed + "/" + key, index);
         save();
     }
 
     public Map<String, Integer> getTrackedForActiveSeed() {
-        long seed = getActiveSeed();
-        if (seed == 0) return Collections.emptyMap();
+        Long seed = getActiveSeed();
+        if (seed == null) return Collections.emptyMap();
         String prefix = seed + "/";
         Map<String, Integer> result = new LinkedHashMap<>();
         for (Map.Entry<String, Integer> entry : trackedIndices.entrySet()) {

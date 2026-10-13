@@ -1,9 +1,7 @@
 package mode;
 
 import enchant.EnchantWithLevels;
-import gamedata.GameData;
 import io.ConfigManager;
-import io.TradeFileIO;
 import trade.*;
 import util.ContextSelector;
 import util.I18n;
@@ -20,8 +18,9 @@ public class ModeMatch {
         System.out.println("\n" + I18n.get("match.title") + "\n");
 
         // 1. Select seed
-        long seed = SeedSelector.select(config);
-        if (seed == 0) return;
+        Long selectedSeed = SeedSelector.select(config);
+        if (selectedSeed == null) return;
+        long seed = selectedSeed;
 
         // 2. Select profession and level
         String profession = InputHelper.selectProfession(TradePoolRegistry.getAllProfessions());
@@ -101,41 +100,12 @@ public class ModeMatch {
 
         System.out.println("\n" + I18n.get("match.observed_count", observedRefreshes.size()));
 
-        // 5. Generate or load data
-        int searchLength = 1000;
-        if (TradeFileIO.exists(seed, profession, level)) {
-            if (InputHelper.askYesNo(I18n.get("match.data_exists_use"))) {
-                // use existing
-                try {
-                    int maxIdx = TradeFileIO.getMaxRefreshIndex(seed, profession, level);
-                    searchLength = maxIdx;
-                    System.out.println(I18n.get("match.loaded_data", maxIdx));
-                } catch (Exception e) {
-                    System.out.println(I18n.get("match.error_reading", e.getMessage()));
-                    return;
-                }
-            } else {
-                searchLength = InputHelper.readInt(I18n.get("match.generate_how_many"), 1000);
-            }
-        } else {
-            searchLength = InputHelper.readInt(I18n.get("match.no_data_generate"), 1000);
-        }
-
-        // 6. Generate sequence
+        int searchLength = InputHelper.readInt(I18n.get("match.generate_how_many"), 1000);
         System.out.println(I18n.get("match.generating", searchLength));
         TradeSimulator simulator = TradeSimulator.forPool(pool, seed, context);
-
         List<RefreshResult> generated = new ArrayList<>();
         for (int i = 1; i <= searchLength; i++) {
             generated.add(simulator.simulateRefresh(pool, i));
-        }
-
-        // Save to file
-        try {
-            String header = "game_version=" + GameData.get().version + " seed=" + seed + " pool=" + pool.getDisplayName() + " " + context.describe();
-            TradeFileIO.write(seed, profession, level, header.trim(), generated);
-        } catch (Exception e) {
-            System.out.println("Warning: Could not save data file: " + e.getMessage());
         }
 
         // 7. Sliding window match

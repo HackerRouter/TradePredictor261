@@ -18,8 +18,9 @@ public class ModePredict {
         System.out.println("\n" + I18n.get("predict.title") + "\n");
 
         // 1. Select seed
-        long seed = SeedSelector.select(config);
-        if (seed == 0) return;
+        Long selectedSeed = SeedSelector.select(config);
+        if (selectedSeed == null) return;
+        long seed = selectedSeed;
 
         // 2. Select profession and level
         String profession = InputHelper.selectProfession(TradePoolRegistry.getAllProfessions());

@@ -1,5 +1,7 @@
 package trade;
 
+import util.I18n;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,11 +41,11 @@ public class RefreshResult {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Refresh #").append(refreshIndex).append(":\n");
+        sb.append(I18n.get("result.refresh", refreshIndex)).append("\n");
         int slotIdx = 1;
         for (TradeResult trade : trades) {
             if (!trade.discarded) {
-                sb.append("  Slot ").append(slotIdx).append(": ").append(trade.getFullDescription()).append("\n");
+                sb.append("  ").append(I18n.get("result.slot", slotIdx)).append(trade.getFullDescription()).append("\n");
                 slotIdx++;
             } else {
                 sb.append("  ").append(trade.getFullDescription()).append("\n");

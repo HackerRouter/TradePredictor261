@@ -19,8 +19,9 @@ public class ModeGenerate {
     public static void run(ConfigManager config) {
         System.out.println("\n" + I18n.get("generate.title") + "\n");
 
-        long seed = SeedSelector.select(config);
-        if (seed == 0) return;
+        Long selectedSeed = SeedSelector.select(config);
+        if (selectedSeed == null) return;
+        long seed = selectedSeed;
 
         String profession = InputHelper.selectProfession(TradePoolRegistry.getAllProfessions());
         int level = InputHelper.selectLevel();

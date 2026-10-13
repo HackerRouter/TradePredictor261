@@ -11,18 +11,6 @@ public class InputHelper {
         return scanner.nextLine().trim();
     }
 
-    public static long readLong(String prompt, long defaultValue) {
-        System.out.print(prompt + I18n.get("input.default", defaultValue));
-        String input = readLine();
-        if (input.isEmpty()) return defaultValue;
-        try {
-            return Long.parseLong(input);
-        } catch (NumberFormatException e) {
-            System.out.println(I18n.get("input.invalid_number_default", defaultValue));
-            return defaultValue;
-        }
-    }
-
     public static int readInt(String prompt, int defaultValue) {
         System.out.print(prompt + I18n.get("input.default", defaultValue));
         String input = readLine();

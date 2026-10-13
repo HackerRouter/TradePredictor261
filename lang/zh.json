@@ -22,16 +22,15 @@
   "input.yes_no_suffix": " (y/n): ",
 
   "seed.no_seed": "未配置世界种子。",
-  "seed.enter_seed": "输入世界种子",
-  "seed.invalid_seed": "无效种子。",
+  "seed.enter_seed": "输入世界种子 (数字或文字, 与游戏内相同)",
+  "seed.invalid_seed": "未输入种子。",
   "seed.current_seed": "当前世界种子: {0}",
   "seed.use_seed": "使用种子 {0}",
   "seed.input_new": "输入新种子",
   "seed.select_title": "选择种子:",
   "seed.active_marker": " (当前)",
-  "seed.enter_new": "输入新世界种子",
-  "seed.invalid_using_existing": "无效种子, 使用现有种子。",
-  "seed.invalid_using_active": "无效种子, 使用当前种子。",
+  "seed.enter_new": "输入新世界种子 (数字或文字, 与游戏内相同)",
+  "seed.invalid_using_active": "未输入种子, 使用当前种子。",
 
   "config.title": "--- 当前配置 ---",
   "config.no_seeds": "未配置种子。",
@@ -74,11 +73,7 @@
   "match.invalid_input": "无效输入, 请重试。",
   "match.no_observations": "未输入观测数据。",
   "match.observed_count": "已观测 {0} 次交易刷新。",
-  "match.data_exists_use": "数据文件已存在。使用现有数据?",
-  "match.loaded_data": "已加载数据, 共 {0} 次交易刷新。",
-  "match.error_reading": "读取文件错误: {0}",
-  "match.generate_how_many": "生成多少次交易刷新序列?",
-  "match.no_data_generate": "无数据文件。生成多少次交易刷新序列?",
+  "match.generate_how_many": "在多少次交易刷新内搜索?",
   "match.generating": "正在生成 {0} 次交易刷新...",
   "match.searching": "正在搜索匹配...",
   "match.no_match": "在 {0} 次交易刷新中未找到匹配!",
@@ -325,5 +320,8 @@
   "villager_type.savanna": "热带草原",
   "villager_type.snow": "雪原",
   "villager_type.swamp": "沼泽",
-  "villager_type.taiga": "针叶林"
+  "villager_type.taiga": "针叶林",
+  "seed.parsed": "世界种子: {0}",
+  "result.refresh": "交易刷新 #{0}:",
+  "result.slot": "槽位 {0}: "
 }
