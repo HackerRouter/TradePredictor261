@@ -66,6 +66,7 @@
   "match.format_constant": "格式: 交易索引(trade_index)                          — 常规交易",
   "match.format_enchant": "      交易索引,附魔索引,等级,价格(trade_index,enchant_idx,level,cost) — 附魔书/单附魔装备",
   "match.format_equipment": "      交易索引,附魔1索引,等级1,附魔2索引,等级2,...,总价             — 多附魔装备",
+  "match.cost_note": "注意: 价格指交易生成时的原始价格 (基础 + 额外)。交易界面显示的价格可能因声望 (如治愈僵尸村民) 或村庄英雄效果而降低, 或因需求而上涨。不确定时价格填 0 表示不限。",
   "match.type_done": "输入 'done' 结束。",
   "match.refresh_slot": "交易刷新 {0}, 槽位 {1}: ",
   "match.complete_refresh": "请完成本次交易刷新或在新行输入 'done'。",

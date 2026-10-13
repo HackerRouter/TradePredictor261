@@ -65,6 +65,8 @@
   "match.input_instructions": "Input observed trades (per refresh, comma-separated values):",
   "match.format_constant": "Format: trade_index (for constant trades)",
   "match.format_enchant": "        trade_index,enchant_idx,level,cost (for enchanted books)",
+  "match.format_equipment": "        trade_index,enchant1_idx,level1,enchant2_idx,level2,...,total_cost (for multi-enchanted equipment)",
+  "match.cost_note": "Note: cost is the original price when the trade was generated (base + additional). The price shown in the trade GUI may be lowered by reputation (e.g. curing a zombie villager) or Hero of the Village, or raised by demand. If unsure, enter 0 to ignore cost.",
   "match.type_done": "Type 'done' when finished.",
   "match.refresh_slot": "Refresh {0}, Slot {1}: ",
   "match.complete_refresh": "Please complete this refresh or start a new line with 'done'.",

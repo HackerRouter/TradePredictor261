@@ -41,6 +41,7 @@ public class ModeMatch {
         System.out.println(I18n.get("match.format_constant"));
         System.out.println(I18n.get("match.format_enchant"));
         System.out.println(I18n.get("match.format_equipment"));
+        System.out.println(I18n.get("match.cost_note"));
         System.out.println(I18n.get("match.type_done") + "\n");
 
         List<int[][]> observedRefreshes = new ArrayList<>();
