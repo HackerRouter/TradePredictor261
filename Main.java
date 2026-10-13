@@ -1,3 +1,4 @@
+import gamedata.GameData;
 import io.ConfigManager;
 import mode.ModeGenerate;
 import mode.ModeMatch;
@@ -19,6 +20,16 @@ public class Main {
         System.out.println(I18n.get("app.title"));
         System.out.println(I18n.get("app.subtitle"));
         System.out.println();
+
+        if (!GameData.isSupported(config.getGameVersion())) {
+            if (config.getGameVersion() != null) {
+                System.out.println(I18n.get("version.unsupported", config.getGameVersion()));
+            }
+            selectGameVersion(config);
+        } else {
+            GameData.select(config.getGameVersion());
+        }
+        System.out.println(I18n.get("version.current", config.getGameVersion()));
 
         while (true) {
             System.out.println("\n" + I18n.get("menu.title"));
@@ -70,8 +81,8 @@ public class Main {
             }
         }
 
-        // Show language
         System.out.println(I18n.get("config.language_label", I18n.getLanguage()));
+        System.out.println(I18n.get("version.current", config.getGameVersion()));
 
         // Show tracked indices for active seed
         var tracked = config.getTrackedForActiveSeed();
@@ -88,12 +99,24 @@ public class Main {
         System.out.println();
         int action = InputHelper.selectFromMenu(I18n.get("config.actions_title"), Arrays.asList(
             I18n.get("config.change_language"),
+            I18n.get("config.change_version"),
             I18n.get("config.back")
         ));
 
         if (action == 0) {
             changeLanguage(config);
+        } else if (action == 1) {
+            selectGameVersion(config);
+            System.out.println(I18n.get("version.current", config.getGameVersion()));
         }
+    }
+
+    private static void selectGameVersion(ConfigManager config) {
+        List<String> versions = GameData.supportedVersions();
+        int choice = InputHelper.selectFromMenu(I18n.get("version.select"), versions);
+        String version = versions.get(choice);
+        GameData.select(version);
+        config.setGameVersion(version);
     }
 
     private static void changeLanguage(ConfigManager config) {

@@ -1,130 +1,101 @@
 package enchant;
 
+import gamedata.GameData;
 import rng.Xoroshiro128PlusPlus;
-import util.I18n;
-import java.util.ArrayList;
-import java.util.List;
+import trade.Modifier;
+import util.Names;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class EnchantWithLevels {
 
     public static class EnchantInstance {
-        public final int enchantIndex;    // index in ON_TRADED_EQUIPMENT (0-35)
-        public final String enchantName;
+        public final EnchantDef def;
         public final int level;
-        public final int weight;
 
-        public EnchantInstance(int enchantIndex, String enchantName, int level, int weight) {
-            this.enchantIndex = enchantIndex;
-            this.enchantName = enchantName;
+        public EnchantInstance(EnchantDef def, int level) {
+            this.def = def;
             this.level = level;
-            this.weight = weight;
+        }
+
+        public int enchantIndex() {
+            return def.index;
         }
 
         @Override
         public String toString() {
-            String displayName = I18n.translateId("enchant", enchantName);
-            return displayName + (level > 1 ? " " + level : "");
+            return Names.enchant(def.name) + (level > 1 ? " " + level : "");
         }
     }
 
     public static class Result {
         public final List<EnchantInstance> enchantments;
-        public final int enchantmentCost;  // the cost level used (for ADDITIONAL_TRADE_COST)
-        public final boolean empty;        // true if no enchantments were applied (item discarded)
+        public final int enchantmentCost;
+        public final boolean empty;
+        private final GameData data;
 
-        public Result(List<EnchantInstance> enchantments, int enchantmentCost) {
+        public Result(List<EnchantInstance> enchantments, int enchantmentCost, GameData data) {
             this.enchantments = enchantments;
             this.enchantmentCost = enchantmentCost;
             this.empty = enchantments.isEmpty();
+            this.data = data;
+        }
+
+        public List<EnchantInstance> inTooltipOrder() {
+            List<EnchantInstance> sorted = new ArrayList<>(enchantments);
+            sorted.sort(Comparator.comparingInt(e -> data.tooltipRank(e.def.name)));
+            return sorted;
         }
 
         @Override
         public String toString() {
             if (empty) return "[EMPTY - DISCARDED]";
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < enchantments.size(); i++) {
-                if (i > 0) sb.append(", ");
-                sb.append(enchantments.get(i));
+            for (EnchantInstance enchant : inTooltipOrder()) {
+                if (sb.length() > 0) sb.append(", ");
+                sb.append(enchant);
             }
             return sb.toString();
         }
     }
 
-
-    public static Result simulate(Xoroshiro128PlusPlus rng, String itemName) {
-        int enchantability = EnchantData.getEnchantability(itemName);
-        List<EnchantData.EnchantDef> applicableEnchants = EnchantData.getApplicableEnchantments(itemName);
-
-        // Step 1: Generate enchantment cost level (UniformGenerator.between(5, 19).getInt())
-        // Mth.nextInt(random, 5, 19) = random.nextInt(15) + 5
-        int enchantmentCost = rng.nextInt(5, 19);
-
-        // Step 2: selectEnchantment
-        List<EnchantInstance> results = selectEnchantment(rng, enchantmentCost, enchantability, applicableEnchants);
-
-        return new Result(results, enchantmentCost);
-    }
-
-    private static List<EnchantInstance> selectEnchantment(
-            Xoroshiro128PlusPlus rng, int enchantmentCost, int enchantability,
-            List<EnchantData.EnchantDef> sourceEnchants) {
-
+    public static Result simulate(Xoroshiro128PlusPlus rng, Modifier modifier, GameData data) {
+        int enchantmentCost = modifier.levels.getInt(rng);
         List<EnchantInstance> results = new ArrayList<>();
-
-        if (enchantability <= 0) {
-            return results;
-        }
-
-        // Modify cost with enchantability
-        // enchantmentCost += 1 + nextInt(enchantability/4 + 1) + nextInt(enchantability/4 + 1)
-        int halfEnch = enchantability / 4 + 1;
-        enchantmentCost += 1 + rng.nextInt(halfEnch) + rng.nextInt(halfEnch);
-
-        // Random span: (nextFloat() + nextFloat() - 1.0) * 0.15
-        float randomSpan = (rng.nextFloat() + rng.nextFloat() - 1.0F) * 0.15F;
-        enchantmentCost = clamp(Math.round(enchantmentCost + enchantmentCost * randomSpan), 1, Integer.MAX_VALUE);
-
-        // Get available enchantments at this cost level
-        List<EnchantInstance> available = getAvailableEnchantments(enchantmentCost, sourceEnchants);
-
-        if (!available.isEmpty()) {
-            // First pick: WeightedRandom.getRandomItem(random, list)
-            EnchantInstance first = weightedRandomPick(rng, available);
-            if (first != null) {
-                results.add(first);
-
-                // Loop: while (nextInt(50) <= enchantmentCost)
-                while (rng.nextInt(50) <= enchantmentCost) {
-                    // Filter compatible enchantments
+        if (modifier.enchantability > 0) {
+            int cost = enchantmentCost;
+            int bonusBound = modifier.enchantability / 4 + 1;
+            cost += 1 + rng.nextInt(bonusBound) + rng.nextInt(bonusBound);
+            float randomSpan = (rng.nextFloat() + rng.nextFloat() - 1.0F) * 0.15F;
+            cost = Math.max(1, Math.round(cost + cost * randomSpan));
+            List<EnchantInstance> available = availableAt(cost, modifier, data);
+            if (!available.isEmpty()) {
+                EnchantInstance first = weightedPick(rng, available);
+                if (first != null) results.add(first);
+                while (rng.nextInt(50) <= cost) {
                     if (!results.isEmpty()) {
-                        filterCompatible(available, results.get(results.size() - 1));
+                        EnchantInstance last = results.get(results.size() - 1);
+                        available.removeIf(e -> !last.def.isCompatibleWith(e.def));
                     }
-
-                    if (available.isEmpty()) {
-                        break;
-                    }
-
-                    // Pick next enchantment
-                    EnchantInstance next = weightedRandomPick(rng, available);
-                    if (next != null) {
-                        results.add(next);
-                    }
-                    enchantmentCost /= 2;
+                    if (available.isEmpty()) break;
+                    EnchantInstance next = weightedPick(rng, available);
+                    if (next != null) results.add(next);
+                    cost /= 2;
                 }
             }
         }
-
-        return results;
+        return new Result(results, enchantmentCost, data);
     }
 
-    private static List<EnchantInstance> getAvailableEnchantments(int cost, List<EnchantData.EnchantDef> source) {
+    private static List<EnchantInstance> availableAt(int cost, Modifier modifier, GameData data) {
         List<EnchantInstance> results = new ArrayList<>();
-        for (EnchantData.EnchantDef def : source) {
-            // Check from max level down to min level (1)
+        for (int index : modifier.enchantOptions) {
+            EnchantDef def = data.enchant(index);
             for (int level = def.maxLevel; level >= 1; level--) {
                 if (cost >= def.getMinCost(level) && cost <= def.getMaxCost(level)) {
-                    results.add(new EnchantInstance(def.id, def.name, level, def.weight));
+                    results.add(new EnchantInstance(def, level));
                     break;
                 }
             }
@@ -132,43 +103,15 @@ public class EnchantWithLevels {
         return results;
     }
 
-    private static EnchantInstance weightedRandomPick(Xoroshiro128PlusPlus rng, List<EnchantInstance> items) {
+    private static EnchantInstance weightedPick(Xoroshiro128PlusPlus rng, List<EnchantInstance> items) {
         int totalWeight = 0;
-        for (EnchantInstance item : items) {
-            totalWeight += item.weight;
-        }
+        for (EnchantInstance item : items) totalWeight += item.def.weight;
         if (totalWeight <= 0) return null;
-
         int selection = rng.nextInt(totalWeight);
         for (EnchantInstance item : items) {
-            selection -= item.weight;
-            if (selection < 0) {
-                return item;
-            }
+            selection -= item.def.weight;
+            if (selection < 0) return item;
         }
         return null;
-    }
-
-    private static void filterCompatible(List<EnchantInstance> enchantments, EnchantInstance target) {
-        enchantments.removeIf(e -> !areCompatible(target, e));
-    }
-
-    private static boolean areCompatible(EnchantInstance a, EnchantInstance b) {
-        if (a.enchantIndex == b.enchantIndex) return false;
-        EnchantData.EnchantDef defA = getDefById(a.enchantIndex);
-        EnchantData.EnchantDef defB = getDefById(b.enchantIndex);
-        if (defA == null || defB == null) return true;
-        return EnchantData.areCompatible(defA, defB);
-    }
-
-    private static EnchantData.EnchantDef getDefById(int id) {
-        if (id >= 0 && id < EnchantData.ON_TRADED_EQUIPMENT_COUNT) {
-            return EnchantData.ON_TRADED_EQUIPMENT[id];
-        }
-        return null;
-    }
-
-    private static int clamp(int value, int min, int max) {
-        return Math.max(min, Math.min(max, value));
     }
 }

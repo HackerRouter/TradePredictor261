@@ -3,8 +3,9 @@ package mode;
 import io.BackupManager;
 import io.ConfigManager;
 import io.TradeFileIO;
-import rng.Xoroshiro128PlusPlus;
+import gamedata.GameData;
 import trade.*;
+import util.ContextSelector;
 import util.I18n;
 import util.InputHelper;
 import util.SeedSelector;
@@ -18,11 +19,9 @@ public class ModeGenerate {
     public static void run(ConfigManager config) {
         System.out.println("\n" + I18n.get("generate.title") + "\n");
 
-        // 1. Select seed
         long seed = SeedSelector.select(config);
         if (seed == 0) return;
 
-        // 2. Select profession and level
         String profession = InputHelper.selectProfession(TradePoolRegistry.getAllProfessions());
         int level = InputHelper.selectLevel();
 
@@ -32,14 +31,12 @@ public class ModeGenerate {
             return;
         }
 
-        // 3. Show pool info
         System.out.println("\n" + I18n.get("generate.pool_info", pool.getDisplayName(), pool.size(), pool.amount));
         pool.printTradeMenu();
+        SimulationContext context = ContextSelector.select(pool);
 
-        // 4. Get generation length
         int length = InputHelper.readInt(I18n.get("generate.num_refreshes"), 100);
 
-        // 5. Check existing file
         if (TradeFileIO.exists(seed, profession, level)) {
             System.out.println("\n" + I18n.get("generate.file_exists_warning", pool.getDisplayName()));
             if (InputHelper.askYesNo(I18n.get("generate.backup_overwrite"))) {
@@ -57,11 +54,8 @@ public class ModeGenerate {
             }
         }
 
-        // 6. Generate
         System.out.println("\n" + I18n.get("generate.generating", length, pool.getDisplayName()));
-        Xoroshiro128PlusPlus rng = new Xoroshiro128PlusPlus(pool.identifier);
-        rng.setSeed(seed);
-        TradeSimulator simulator = new TradeSimulator(rng);
+        TradeSimulator simulator = TradeSimulator.forPool(pool, seed, context);
 
         List<RefreshResult> results = new ArrayList<>();
         for (int i = 1; i <= length; i++) {
@@ -69,9 +63,9 @@ public class ModeGenerate {
             results.add(refresh);
         }
 
-        // 7. Write to file
         try {
-            TradeFileIO.write(seed, profession, level, results);
+            String header = "game_version=" + GameData.get().version + " seed=" + seed + " pool=" + pool.getDisplayName() + " " + context.describe();
+            TradeFileIO.write(seed, profession, level, header.trim(), results);
             System.out.println(I18n.get("generate.written_to", TradeFileIO.getFilePath(seed, profession, level)));
             System.out.println(I18n.get("generate.total_refreshes", length));
         } catch (Exception e) {
@@ -79,7 +73,6 @@ public class ModeGenerate {
             return;
         }
 
-        // 8. Print first few results as preview
         System.out.println("\n" + I18n.get("generate.preview_title"));
         for (int i = 0; i < Math.min(5, results.size()); i++) {
             System.out.print(results.get(i));

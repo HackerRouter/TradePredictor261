@@ -1,32 +1,28 @@
 package functions;
 
 import rng.Xoroshiro128PlusPlus;
-import enchant.EnchantData;
-import util.I18n;
-
+import trade.Modifier;
+import util.Names;
 
 public class SetStewEffect {
 
     public static class Result {
-        public final int effectIndex;     // 0-5
-        public final String effectName;
-        public final int durationSeconds;
+        public final int effectIndex;
+        public final Modifier.StewEffect effect;
 
-        public Result(int effectIndex, String effectName, int durationSeconds) {
+        public Result(int effectIndex, Modifier.StewEffect effect) {
             this.effectIndex = effectIndex;
-            this.effectName = effectName;
-            this.durationSeconds = durationSeconds;
+            this.effect = effect;
         }
 
         @Override
         public String toString() {
-            String displayName = I18n.translateId("stew", effectName);
-            return displayName + " " + durationSeconds + "s";
+            return Names.of("stew", effect.effect) + " " + Names.ticks(effect.ticks);
         }
     }
 
-    public static Result simulate(Xoroshiro128PlusPlus rng) {
-        int idx = rng.nextInt(EnchantData.STEW_EFFECT_COUNT); // nextInt(6)
-        return new Result(idx, EnchantData.STEW_EFFECTS[idx], EnchantData.STEW_DURATIONS_SECONDS[idx]);
+    public static Result simulate(Xoroshiro128PlusPlus rng, Modifier modifier) {
+        int index = rng.nextInt(modifier.stewEffects.size());
+        return new Result(index, modifier.stewEffects.get(index));
     }
 }

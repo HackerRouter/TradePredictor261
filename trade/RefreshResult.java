@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RefreshResult {
-    public final int refreshIndex;       // 1-based refresh number
+    public final int refreshIndex;
     public final List<TradeResult> trades;
 
     public RefreshResult(int refreshIndex) {
@@ -16,12 +16,12 @@ public class RefreshResult {
         trades.add(trade);
     }
 
-    public int getSuccessfulTradeCount() {
-        int count = 0;
-        for (TradeResult t : trades) {
-            if (!t.discarded) count++;
+    public List<TradeResult> getOffers() {
+        List<TradeResult> offers = new ArrayList<>();
+        for (TradeResult trade : trades) {
+            if (!trade.discarded) offers.add(trade);
         }
-        return count;
+        return offers;
     }
 
     public List<String> toOutputLines() {
@@ -46,7 +46,7 @@ public class RefreshResult {
                 sb.append("  Slot ").append(slotIdx).append(": ").append(trade.getFullDescription()).append("\n");
                 slotIdx++;
             } else {
-                sb.append("  [Discarded: ").append(trade.tradeName).append("]\n");
+                sb.append("  ").append(trade.getFullDescription()).append("\n");
             }
         }
         return sb.toString();

@@ -20,7 +20,7 @@ public class TradeFileIO {
     }
 
 
-    public static void write(long seed, String profession, int level, List<RefreshResult> results) throws IOException {
+    public static void write(long seed, String profession, int level, String header, List<RefreshResult> results) throws IOException {
         Path dir = Paths.get(DATA_DIR + "/" + seed);
         if (!Files.exists(dir)) {
             Files.createDirectories(dir);
@@ -28,6 +28,7 @@ public class TradeFileIO {
 
         Path filePath = Paths.get(getFilePath(seed, profession, level));
         try (PrintWriter writer = new PrintWriter(Files.newBufferedWriter(filePath))) {
+            writer.println("#" + header);
             writer.println("#refresh_idx|slot_idx|description");
             for (RefreshResult refresh : results) {
                 for (String line : refresh.toOutputLines()) {

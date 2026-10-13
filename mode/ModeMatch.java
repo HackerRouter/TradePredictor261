@@ -1,10 +1,11 @@
 package mode;
 
 import enchant.EnchantWithLevels;
+import gamedata.GameData;
 import io.ConfigManager;
 import io.TradeFileIO;
-import rng.Xoroshiro128PlusPlus;
 import trade.*;
+import util.ContextSelector;
 import util.I18n;
 import util.InputHelper;
 import util.ReferenceHelper;
@@ -34,6 +35,7 @@ public class ModeMatch {
 
         // 3. Show trade menu and reference tables
         pool.printTradeMenu();
+        SimulationContext context = ContextSelector.select(pool);
         ReferenceHelper.printReferences(pool);
 
         // 4. Input observed trades
@@ -121,9 +123,7 @@ public class ModeMatch {
 
         // 6. Generate sequence
         System.out.println(I18n.get("match.generating", searchLength));
-        Xoroshiro128PlusPlus rng = new Xoroshiro128PlusPlus(pool.identifier);
-        rng.setSeed(seed);
-        TradeSimulator simulator = new TradeSimulator(rng);
+        TradeSimulator simulator = TradeSimulator.forPool(pool, seed, context);
 
         List<RefreshResult> generated = new ArrayList<>();
         for (int i = 1; i <= searchLength; i++) {
@@ -132,7 +132,8 @@ public class ModeMatch {
 
         // Save to file
         try {
-            TradeFileIO.write(seed, profession, level, generated);
+            String header = "game_version=" + GameData.get().version + " seed=" + seed + " pool=" + pool.getDisplayName() + " " + context.describe();
+            TradeFileIO.write(seed, profession, level, header.trim(), generated);
         } catch (Exception e) {
             System.out.println("Warning: Could not save data file: " + e.getMessage());
         }
@@ -183,68 +184,47 @@ public class ModeMatch {
     }
 
     private static boolean refreshMatches(int[][] observed, RefreshResult generated, TradePool pool) {
-        // Get non-discarded trades from generated
-        List<TradeResult> genTrades = new ArrayList<>();
-        for (TradeResult t : generated.trades) {
-            if (!t.discarded) genTrades.add(t);
-        }
-
-        if (observed.length > genTrades.size()) return false;
+        List<TradeResult> offers = generated.getOffers();
+        if (observed.length > offers.size()) return false;
 
         for (int slot = 0; slot < observed.length; slot++) {
-            if (observed[slot] == null) continue;
             int[] obs = observed[slot];
-            if (slot >= genTrades.size()) return false;
-            TradeResult gen = genTrades.get(slot);
-
-            // obs[0] = trade index in pool
+            if (obs == null) continue;
+            TradeResult gen = offers.get(slot);
             if (obs[0] != gen.poolIndex) return false;
 
-            // For enchanted books (ENCHANT_RANDOMLY): obs = [tradeIdx, enchantIdx, level, cost]
-            if (obs.length == 4 && gen.enchantRandomlyResult != null) {
+            if (gen.enchantRandomlyResult != null && obs.length == 4) {
                 if (obs[1] != gen.enchantRandomlyResult.enchantIndex) return false;
                 if (obs[2] != 0 && obs[2] != gen.enchantRandomlyResult.level) return false;
-                if (obs[3] != 0 && obs[3] != gen.enchantRandomlyResult.finalCost) return false;
+                if (obs[3] != 0 && obs[3] != gen.price) return false;
             }
 
-            if (obs.length >= 4 && gen.enchantWithLevelsResult != null) {
-                if (gen.enchantWithLevelsResult.empty) return false;
+            if (gen.enchantWithLevelsResult != null && obs.length >= 4) {
+                if (!enchantmentsMatch(obs, gen.enchantWithLevelsResult.enchantments)) return false;
+                int totalCost = obs[obs.length - 1];
+                if (totalCost != 0 && totalCost != gen.price) return false;
+            }
+        }
+        return true;
+    }
 
-                List<EnchantWithLevels.EnchantInstance> genEnchants = gen.enchantWithLevelsResult.enchantments;
-                int totalCostField;
-                int enchantPairCount;
-
-                if (obs.length == 4) {
-                    // Format A: [tradeIdx, enchantIdx, level, totalCost]
-                    enchantPairCount = 1;
-                    totalCostField = obs[3];
-                    // Match first enchantment
-                    if (obs[1] != genEnchants.get(0).enchantIndex) return false;
-                    if (obs[2] != 0 && obs[2] != genEnchants.get(0).level) return false;
-                } else {
-                    totalCostField = obs[obs.length - 1];
-                    enchantPairCount = (obs.length - 2) / 2; // subtract tradeIdx and totalCost, divide by 2
-
-                    // Must have exact number of enchantments
-                    if (enchantPairCount != genEnchants.size()) return false;
-
-                    // Match each enchantment in order
-                    for (int i = 0; i < enchantPairCount; i++) {
-                        int eIdx = obs[1 + i * 2];
-                        int eLvl = obs[2 + i * 2];
-                        if (i >= genEnchants.size()) return false;
-                        if (eIdx != genEnchants.get(i).enchantIndex) return false;
-                        if (eLvl != 0 && eLvl != genEnchants.get(i).level) return false;
-                    }
-                }
-
-                // Match total cost (if provided, 0 = any)
-                if (totalCostField != 0) {
-                    int baseCost = TradeResult.parseBaseCost(gen.tradeName);
-                    int totalCost = baseCost + gen.enchantWithLevelsResult.enchantmentCost;
-                    if (totalCostField != totalCost) return false;
+    private static boolean enchantmentsMatch(int[] obs, List<EnchantWithLevels.EnchantInstance> generated) {
+        int pairCount = (obs.length - 2) / 2;
+        if ((obs.length - 2) % 2 != 0 || pairCount != generated.size()) return false;
+        boolean[] used = new boolean[generated.size()];
+        for (int i = 0; i < pairCount; i++) {
+            int enchantIdx = obs[1 + i * 2];
+            int level = obs[2 + i * 2];
+            boolean found = false;
+            for (int j = 0; j < generated.size(); j++) {
+                EnchantWithLevels.EnchantInstance enchant = generated.get(j);
+                if (!used[j] && enchant.enchantIndex() == enchantIdx && (level == 0 || level == enchant.level)) {
+                    used[j] = true;
+                    found = true;
+                    break;
                 }
             }
+            if (!found) return false;
         }
         return true;
     }

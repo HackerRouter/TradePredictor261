@@ -3,138 +3,75 @@ package trade;
 import enchant.EnchantRandomly;
 import enchant.EnchantWithLevels;
 import functions.SetRandomDyes;
-import functions.SetStewEffect;
 import functions.SetRandomPotion;
+import functions.SetStewEffect;
+import util.I18n;
+import util.Names;
 
 public class TradeResult {
-    public final int poolIndex;          // original index in the pool (before removal)
-    public final String tradeName;       // human-readable trade name
+
+    public enum DiscardReason {
+        VILLAGER_TYPE,
+        NO_ENCHANTMENT,
+        NO_DYE,
+        MAP_UNAVAILABLE,
+        ZERO_COST
+    }
+
+    public final TradeEntry entry;
+    public final int poolIndex;
     public final TradeEntry.TradeType type;
-    public final boolean discarded;      // true if FilteredFunction discarded this trade
+    public final DiscardReason discardReason;
+    public final boolean discarded;
+    public final int price;
 
-    public EnchantRandomly.Result enchantRandomlyResult;
-    public EnchantWithLevels.Result enchantWithLevelsResult;
-    public SetRandomDyes.Result dyeResult;
-    public SetStewEffect.Result stewResult;
-    public SetRandomPotion.Result potionResult;
+    public final EnchantRandomly.Result enchantRandomlyResult;
+    public final EnchantWithLevels.Result enchantWithLevelsResult;
+    public final SetRandomDyes.Result dyeResult;
+    public final SetStewEffect.Result stewResult;
+    public final SetRandomPotion.Result potionResult;
 
-    public TradeResult(int poolIndex, String tradeName, TradeEntry.TradeType type, boolean discarded) {
-        this.poolIndex = poolIndex;
-        this.tradeName = tradeName;
-        this.type = type;
-        this.discarded = discarded;
-    }
-
-    public String getCostDescription() {
-        if (discarded) return "[DISCARDED]";
-        switch (type) {
-            case ENCHANT_RANDOMLY:
-                if (enchantRandomlyResult != null) {
-                    return enchantRandomlyResult.finalCost + " EM + 1 Book";
-                }
-                break;
-            case ENCHANT_WITH_LEVELS:
-                if (enchantWithLevelsResult != null && !enchantWithLevelsResult.empty) {
-                    int base = parseBaseCost(tradeName);
-                    int total = base + enchantWithLevelsResult.enchantmentCost;
-                    return total + " EM";
-                }
-                break;
-            default:
-                break;
-        }
-        return tradeName.split("->")[0].trim();
-    }
-
-    public String getResultDescription() {
-        if (discarded) return "[DISCARDED]";
-        switch (type) {
-            case ENCHANT_RANDOMLY:
-                if (enchantRandomlyResult != null) {
-                    return enchantRandomlyResult.toString();
-                }
-                break;
-            case ENCHANT_WITH_LEVELS:
-                if (enchantWithLevelsResult != null) {
-                    return enchantWithLevelsResult.toString();
-                }
-                break;
-            case SET_RANDOM_DYES:
-                if (dyeResult != null) {
-                    return dyeResult.toString();
-                }
-                break;
-            case SET_STEW_EFFECT:
-                if (stewResult != null) {
-                    return stewResult.toString();
-                }
-                break;
-            case SET_RANDOM_POTION:
-                if (potionResult != null) {
-                    return potionResult.toString();
-                }
-                break;
-            default:
-                break;
-        }
-        return tradeName;
+    TradeResult(TradeEntry entry, DiscardReason discardReason, int price, EnchantRandomly.Result enchantRandomlyResult,
+                EnchantWithLevels.Result enchantWithLevelsResult, SetRandomDyes.Result dyeResult,
+                SetStewEffect.Result stewResult, SetRandomPotion.Result potionResult) {
+        this.entry = entry;
+        this.poolIndex = entry.index;
+        this.type = entry.type;
+        this.discardReason = discardReason;
+        this.discarded = discardReason != null;
+        this.price = price;
+        this.enchantRandomlyResult = enchantRandomlyResult;
+        this.enchantWithLevelsResult = enchantWithLevelsResult;
+        this.dyeResult = dyeResult;
+        this.stewResult = stewResult;
+        this.potionResult = potionResult;
     }
 
     public String getFullDescription() {
-        if (discarded) return "[DISCARDED]";
+        if (discarded) {
+            return "[" + I18n.get("trade.discarded_" + discardReason.name().toLowerCase()) + ": " + entry.label() + "]";
+        }
+        String cost = entry.costLabel(price);
         switch (type) {
             case ENCHANT_RANDOMLY:
-                if (enchantRandomlyResult != null) {
-                    return enchantRandomlyResult.finalCost + " EM + 1 Book -> " + enchantRandomlyResult.toString();
-                }
-                break;
+                return cost + " -> " + Names.item(entry.givesItem) + " [" + enchantRandomlyResult + "]"
+                    + (enchantRandomlyResult.doubled ? " (x2)" : "");
             case ENCHANT_WITH_LEVELS:
-                if (enchantWithLevelsResult != null && !enchantWithLevelsResult.empty) {
-                    int baseCost = parseBaseCost(tradeName);
-                    int totalCost = baseCost + enchantWithLevelsResult.enchantmentCost;
-                    return totalCost + " EM -> " + extractItemName(tradeName) + " -> "
-                        + enchantWithLevelsResult.toString()
-                        + " (" + baseCost + "+" + enchantWithLevelsResult.enchantmentCost + "=" + totalCost + "E)";
-                }
-                break;
+                return cost + " -> " + Names.item(entry.givesItem) + " [" + enchantWithLevelsResult + "]"
+                    + " (" + entry.wants.count + "+" + (price - entry.wants.count) + ")";
             case SET_RANDOM_DYES:
-                if (dyeResult != null) {
-                    return tradeName + " " + dyeResult.toString();
-                }
-                break;
+                return cost + " -> " + entry.givesLabel() + " " + dyeResult;
             case SET_STEW_EFFECT:
-                if (stewResult != null) {
-                    return tradeName + " -> " + stewResult.toString();
-                }
-                break;
+                return cost + " -> " + entry.givesLabel() + " [" + stewResult + "]";
             case SET_RANDOM_POTION:
-                if (potionResult != null) {
-                    return tradeName + " -> " + potionResult.toString();
-                }
-                break;
+                return cost + " -> " + entry.givesLabel() + " [" + potionResult + "]";
             default:
-                break;
+                return cost + " -> " + entry.givesLabel();
         }
-        return tradeName;
     }
 
-    public static int parseBaseCost(String tradeName) {
-        try {
-            int emIdx = tradeName.indexOf(" EM");
-            if (emIdx > 0) {
-                return Integer.parseInt(tradeName.substring(0, emIdx).trim());
-            }
-        } catch (NumberFormatException e) {
-            // fall through
-        }
-        return 0;
-    }
-
-    private static String extractItemName(String tradeName) {
-        int arrowIdx = tradeName.indexOf("-> ");
-        if (arrowIdx >= 0) {
-            return tradeName.substring(arrowIdx + 3);
-        }
-        return tradeName;
+    @Override
+    public String toString() {
+        return getFullDescription();
     }
 }

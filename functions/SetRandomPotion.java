@@ -1,8 +1,8 @@
 package functions;
 
 import rng.Xoroshiro128PlusPlus;
-import enchant.EnchantData;
-import util.I18n;
+import trade.Modifier;
+import util.Names;
 
 public class SetRandomPotion {
 
@@ -17,12 +17,12 @@ public class SetRandomPotion {
 
         @Override
         public String toString() {
-            return I18n.translateId("potion", potionName);
+            return Names.of("potion", potionName);
         }
     }
 
-    public static Result simulate(Xoroshiro128PlusPlus rng) {
-        int idx = rng.nextInt(EnchantData.TRADEABLE_POTION_COUNT); // nextInt(41)
-        return new Result(idx, EnchantData.TRADEABLE_POTIONS[idx]);
+    public static Result simulate(Xoroshiro128PlusPlus rng, Modifier modifier) {
+        int index = rng.nextInt(modifier.potionOptions.size());
+        return new Result(index, modifier.potionOptions.get(index));
     }
 }

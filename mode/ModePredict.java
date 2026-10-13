@@ -2,8 +2,8 @@ package mode;
 
 import io.ConfigManager;
 import io.TradeFileIO;
-import rng.Xoroshiro128PlusPlus;
 import trade.*;
+import util.ContextSelector;
 import util.I18n;
 import util.InputHelper;
 import util.ReferenceHelper;
@@ -58,6 +58,7 @@ public class ModePredict {
 
         // 4. Show trade menu and reference tables, get targets
         pool.printTradeMenu();
+        SimulationContext context = ContextSelector.select(pool);
         ReferenceHelper.printReferences(pool);
         System.out.println("\n" + I18n.get("predict.input_instructions"));
         System.out.println(I18n.get("predict.format_constant"));
@@ -96,14 +97,8 @@ public class ModePredict {
 
         System.out.println("\n" + I18n.get("predict.searching", startFrom, searchLength));
 
-        Xoroshiro128PlusPlus rng = new Xoroshiro128PlusPlus(pool.identifier);
-        rng.setSeed(seed);
-        TradeSimulator simulator = new TradeSimulator(rng);
-
-        // Skip to startFrom position
-        for (int i = 1; i < startFrom; i++) {
-            simulator.simulateRefresh(pool, i);
-        }
+        TradeSimulator simulator = TradeSimulator.forPool(pool, seed, context);
+        simulator.skip(pool, startFrom - 1);
 
         // Search
         List<Integer> foundAt = new ArrayList<>();
@@ -132,12 +127,8 @@ public class ModePredict {
             // Show details of first match
             int firstMatch = foundAt.get(0);
             System.out.println("\n" + I18n.get("predict.first_match_details", firstMatch));
-            Xoroshiro128PlusPlus rng2 = new Xoroshiro128PlusPlus(pool.identifier);
-            rng2.setSeed(seed);
-            TradeSimulator sim2 = new TradeSimulator(rng2);
-            for (int i = 1; i < firstMatch; i++) {
-                sim2.simulateRefresh(pool, i);
-            }
+            TradeSimulator sim2 = TradeSimulator.forPool(pool, seed, context);
+            sim2.skip(pool, firstMatch - 1);
             RefreshResult match = sim2.simulateRefresh(pool, firstMatch);
             System.out.print(match);
         }
@@ -179,7 +170,7 @@ public class ModePredict {
 
             if (trade.enchantRandomlyResult.enchantIndex != enchantIdx) return false;
             if (targetLevel != 0 && trade.enchantRandomlyResult.level != targetLevel) return false;
-            if (maxCost != 0 && trade.enchantRandomlyResult.finalCost > maxCost) return false;
+            if (maxCost != 0 && trade.price > maxCost) return false;
         }
 
         return true;
