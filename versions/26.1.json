@@ -1,0 +1,5846 @@
+{
+  "group": "26.1",
+  "villager_types": [
+    "desert",
+    "jungle",
+    "plains",
+    "savanna",
+    "snow",
+    "swamp",
+    "taiga"
+  ],
+  "dye_colors": [
+    "white",
+    "orange",
+    "magenta",
+    "light_blue",
+    "yellow",
+    "lime",
+    "pink",
+    "gray",
+    "light_gray",
+    "cyan",
+    "purple",
+    "blue",
+    "brown",
+    "green",
+    "red",
+    "black"
+  ],
+  "enchantments": [
+    {
+      "id": "protection",
+      "max_level": 4,
+      "weight": 10,
+      "min_cost": [
+        1,
+        11
+      ],
+      "max_cost": [
+        12,
+        11
+      ],
+      "exclusive": [
+        "protection",
+        "blast_protection",
+        "fire_protection",
+        "projectile_protection"
+      ]
+    },
+    {
+      "id": "fire_protection",
+      "max_level": 4,
+      "weight": 5,
+      "min_cost": [
+        10,
+        8
+      ],
+      "max_cost": [
+        18,
+        8
+      ],
+      "exclusive": [
+        "protection",
+        "blast_protection",
+        "fire_protection",
+        "projectile_protection"
+      ]
+    },
+    {
+      "id": "feather_falling",
+      "max_level": 4,
+      "weight": 5,
+      "min_cost": [
+        5,
+        6
+      ],
+      "max_cost": [
+        11,
+        6
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "blast_protection",
+      "max_level": 4,
+      "weight": 2,
+      "min_cost": [
+        5,
+        8
+      ],
+      "max_cost": [
+        13,
+        8
+      ],
+      "exclusive": [
+        "protection",
+        "blast_protection",
+        "fire_protection",
+        "projectile_protection"
+      ]
+    },
+    {
+      "id": "projectile_protection",
+      "max_level": 4,
+      "weight": 5,
+      "min_cost": [
+        3,
+        6
+      ],
+      "max_cost": [
+        9,
+        6
+      ],
+      "exclusive": [
+        "protection",
+        "blast_protection",
+        "fire_protection",
+        "projectile_protection"
+      ]
+    },
+    {
+      "id": "respiration",
+      "max_level": 3,
+      "weight": 2,
+      "min_cost": [
+        10,
+        10
+      ],
+      "max_cost": [
+        40,
+        10
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "aqua_affinity",
+      "max_level": 1,
+      "weight": 2,
+      "min_cost": [
+        1,
+        0
+      ],
+      "max_cost": [
+        41,
+        0
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "thorns",
+      "max_level": 3,
+      "weight": 1,
+      "min_cost": [
+        10,
+        20
+      ],
+      "max_cost": [
+        60,
+        20
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "depth_strider",
+      "max_level": 3,
+      "weight": 2,
+      "min_cost": [
+        10,
+        10
+      ],
+      "max_cost": [
+        25,
+        10
+      ],
+      "exclusive": [
+        "frost_walker",
+        "depth_strider"
+      ]
+    },
+    {
+      "id": "sharpness",
+      "max_level": 5,
+      "weight": 10,
+      "min_cost": [
+        1,
+        11
+      ],
+      "max_cost": [
+        21,
+        11
+      ],
+      "exclusive": [
+        "sharpness",
+        "smite",
+        "bane_of_arthropods",
+        "impaling",
+        "density",
+        "breach"
+      ]
+    },
+    {
+      "id": "smite",
+      "max_level": 5,
+      "weight": 5,
+      "min_cost": [
+        5,
+        8
+      ],
+      "max_cost": [
+        25,
+        8
+      ],
+      "exclusive": [
+        "sharpness",
+        "smite",
+        "bane_of_arthropods",
+        "impaling",
+        "density",
+        "breach"
+      ]
+    },
+    {
+      "id": "bane_of_arthropods",
+      "max_level": 5,
+      "weight": 5,
+      "min_cost": [
+        5,
+        8
+      ],
+      "max_cost": [
+        25,
+        8
+      ],
+      "exclusive": [
+        "sharpness",
+        "smite",
+        "bane_of_arthropods",
+        "impaling",
+        "density",
+        "breach"
+      ]
+    },
+    {
+      "id": "knockback",
+      "max_level": 2,
+      "weight": 5,
+      "min_cost": [
+        5,
+        20
+      ],
+      "max_cost": [
+        55,
+        20
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "fire_aspect",
+      "max_level": 2,
+      "weight": 2,
+      "min_cost": [
+        10,
+        20
+      ],
+      "max_cost": [
+        60,
+        20
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "looting",
+      "max_level": 3,
+      "weight": 2,
+      "min_cost": [
+        15,
+        9
+      ],
+      "max_cost": [
+        65,
+        9
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "sweeping_edge",
+      "max_level": 3,
+      "weight": 2,
+      "min_cost": [
+        5,
+        9
+      ],
+      "max_cost": [
+        20,
+        9
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "efficiency",
+      "max_level": 5,
+      "weight": 10,
+      "min_cost": [
+        1,
+        10
+      ],
+      "max_cost": [
+        51,
+        10
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "silk_touch",
+      "max_level": 1,
+      "weight": 1,
+      "min_cost": [
+        15,
+        0
+      ],
+      "max_cost": [
+        65,
+        0
+      ],
+      "exclusive": [
+        "fortune",
+        "silk_touch"
+      ]
+    },
+    {
+      "id": "unbreaking",
+      "max_level": 3,
+      "weight": 5,
+      "min_cost": [
+        5,
+        8
+      ],
+      "max_cost": [
+        55,
+        8
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "fortune",
+      "max_level": 3,
+      "weight": 2,
+      "min_cost": [
+        15,
+        9
+      ],
+      "max_cost": [
+        65,
+        9
+      ],
+      "exclusive": [
+        "fortune",
+        "silk_touch"
+      ]
+    },
+    {
+      "id": "power",
+      "max_level": 5,
+      "weight": 10,
+      "min_cost": [
+        1,
+        10
+      ],
+      "max_cost": [
+        16,
+        10
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "punch",
+      "max_level": 2,
+      "weight": 2,
+      "min_cost": [
+        12,
+        20
+      ],
+      "max_cost": [
+        37,
+        20
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "flame",
+      "max_level": 1,
+      "weight": 2,
+      "min_cost": [
+        20,
+        0
+      ],
+      "max_cost": [
+        50,
+        0
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "infinity",
+      "max_level": 1,
+      "weight": 1,
+      "min_cost": [
+        20,
+        0
+      ],
+      "max_cost": [
+        50,
+        0
+      ],
+      "exclusive": [
+        "infinity",
+        "mending"
+      ]
+    },
+    {
+      "id": "luck_of_the_sea",
+      "max_level": 3,
+      "weight": 2,
+      "min_cost": [
+        15,
+        9
+      ],
+      "max_cost": [
+        65,
+        9
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "lure",
+      "max_level": 3,
+      "weight": 2,
+      "min_cost": [
+        15,
+        9
+      ],
+      "max_cost": [
+        65,
+        9
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "loyalty",
+      "max_level": 3,
+      "weight": 5,
+      "min_cost": [
+        12,
+        7
+      ],
+      "max_cost": [
+        50,
+        0
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "impaling",
+      "max_level": 5,
+      "weight": 2,
+      "min_cost": [
+        1,
+        8
+      ],
+      "max_cost": [
+        21,
+        8
+      ],
+      "exclusive": [
+        "sharpness",
+        "smite",
+        "bane_of_arthropods",
+        "impaling",
+        "density",
+        "breach"
+      ]
+    },
+    {
+      "id": "riptide",
+      "max_level": 3,
+      "weight": 2,
+      "min_cost": [
+        17,
+        7
+      ],
+      "max_cost": [
+        50,
+        0
+      ],
+      "exclusive": [
+        "loyalty",
+        "channeling"
+      ]
+    },
+    {
+      "id": "channeling",
+      "max_level": 1,
+      "weight": 1,
+      "min_cost": [
+        25,
+        0
+      ],
+      "max_cost": [
+        50,
+        0
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "multishot",
+      "max_level": 1,
+      "weight": 2,
+      "min_cost": [
+        20,
+        0
+      ],
+      "max_cost": [
+        50,
+        0
+      ],
+      "exclusive": [
+        "multishot",
+        "piercing"
+      ]
+    },
+    {
+      "id": "quick_charge",
+      "max_level": 3,
+      "weight": 5,
+      "min_cost": [
+        12,
+        20
+      ],
+      "max_cost": [
+        50,
+        0
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "piercing",
+      "max_level": 4,
+      "weight": 10,
+      "min_cost": [
+        1,
+        10
+      ],
+      "max_cost": [
+        50,
+        0
+      ],
+      "exclusive": [
+        "multishot",
+        "piercing"
+      ]
+    },
+    {
+      "id": "density",
+      "max_level": 5,
+      "weight": 5,
+      "min_cost": [
+        5,
+        8
+      ],
+      "max_cost": [
+        25,
+        8
+      ],
+      "exclusive": [
+        "sharpness",
+        "smite",
+        "bane_of_arthropods",
+        "impaling",
+        "density",
+        "breach"
+      ]
+    },
+    {
+      "id": "breach",
+      "max_level": 4,
+      "weight": 2,
+      "min_cost": [
+        15,
+        9
+      ],
+      "max_cost": [
+        65,
+        9
+      ],
+      "exclusive": [
+        "sharpness",
+        "smite",
+        "bane_of_arthropods",
+        "impaling",
+        "density",
+        "breach"
+      ]
+    },
+    {
+      "id": "lunge",
+      "max_level": 3,
+      "weight": 5,
+      "min_cost": [
+        5,
+        8
+      ],
+      "max_cost": [
+        25,
+        8
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "binding_curse",
+      "max_level": 1,
+      "weight": 1,
+      "min_cost": [
+        25,
+        0
+      ],
+      "max_cost": [
+        50,
+        0
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "vanishing_curse",
+      "max_level": 1,
+      "weight": 1,
+      "min_cost": [
+        25,
+        0
+      ],
+      "max_cost": [
+        50,
+        0
+      ],
+      "exclusive": []
+    },
+    {
+      "id": "frost_walker",
+      "max_level": 2,
+      "weight": 2,
+      "min_cost": [
+        10,
+        10
+      ],
+      "max_cost": [
+        25,
+        10
+      ],
+      "exclusive": [
+        "frost_walker",
+        "depth_strider"
+      ]
+    },
+    {
+      "id": "mending",
+      "max_level": 1,
+      "weight": 2,
+      "min_cost": [
+        25,
+        25
+      ],
+      "max_cost": [
+        75,
+        25
+      ],
+      "exclusive": []
+    }
+  ],
+  "tooltip_order": [
+    "binding_curse",
+    "vanishing_curse",
+    "riptide",
+    "channeling",
+    "wind_burst",
+    "frost_walker",
+    "lunge",
+    "sharpness",
+    "smite",
+    "bane_of_arthropods",
+    "impaling",
+    "power",
+    "density",
+    "breach",
+    "piercing",
+    "sweeping_edge",
+    "multishot",
+    "fire_aspect",
+    "flame",
+    "knockback",
+    "punch",
+    "protection",
+    "blast_protection",
+    "fire_protection",
+    "projectile_protection",
+    "feather_falling",
+    "fortune",
+    "looting",
+    "silk_touch",
+    "luck_of_the_sea",
+    "efficiency",
+    "quick_charge",
+    "lure",
+    "respiration",
+    "aqua_affinity",
+    "soul_speed",
+    "swift_sneak",
+    "depth_strider",
+    "thorns",
+    "loyalty",
+    "unbreaking",
+    "infinity",
+    "mending"
+  ],
+  "pools": [
+    {
+      "profession": "farmer",
+      "level": 1,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/farmer/level_1",
+      "trades": [
+        {
+          "id": "farmer/1/wheat_emerald",
+          "wants": {
+            "item": "wheat",
+            "count": 20,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "farmer/1/potato_emerald",
+          "wants": {
+            "item": "potato",
+            "count": 26,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "farmer/1/carrot_emerald",
+          "wants": {
+            "item": "carrot",
+            "count": 22,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "farmer/1/beetroot_emerald",
+          "wants": {
+            "item": "beetroot",
+            "count": 15,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "farmer/1/emerald_bread",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "bread",
+            "count": 6
+          }
+        }
+      ]
+    },
+    {
+      "profession": "farmer",
+      "level": 2,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/farmer/level_2",
+      "trades": [
+        {
+          "id": "farmer/2/pumpkin_emerald",
+          "wants": {
+            "item": "pumpkin",
+            "count": 6,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "farmer/2/emerald_pumpkin_pie",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "pumpkin_pie",
+            "count": 4
+          }
+        },
+        {
+          "id": "farmer/2/emerald_apple",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "apple",
+            "count": 4
+          }
+        }
+      ]
+    },
+    {
+      "profession": "farmer",
+      "level": 3,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/farmer/level_3",
+      "trades": [
+        {
+          "id": "farmer/3/emerald_cookie",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cookie",
+            "count": 18
+          }
+        },
+        {
+          "id": "farmer/3/melon_emerald",
+          "wants": {
+            "item": "melon",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "farmer",
+      "level": 4,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/farmer/level_4",
+      "trades": [
+        {
+          "id": "farmer/4/emerald_cake",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cake",
+            "count": 1
+          }
+        },
+        {
+          "id": "farmer/4/emerald_suspicious_stew",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "suspicious_stew",
+            "count": 1
+          },
+          "modifier": {
+            "type": "set_stew_effect",
+            "effects": [
+              {
+                "effect": "night_vision",
+                "ticks": 100
+              },
+              {
+                "effect": "jump_boost",
+                "ticks": 160
+              },
+              {
+                "effect": "weakness",
+                "ticks": 140
+              },
+              {
+                "effect": "blindness",
+                "ticks": 120
+              },
+              {
+                "effect": "poison",
+                "ticks": 280
+              },
+              {
+                "effect": "saturation",
+                "ticks": 7
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "profession": "farmer",
+      "level": 5,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/farmer/level_5",
+      "trades": [
+        {
+          "id": "farmer/5/emerald_golden_carrot",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "golden_carrot",
+            "count": 3
+          }
+        },
+        {
+          "id": "farmer/5/emerald_glistening_melon_slice",
+          "wants": {
+            "item": "emerald",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "glistering_melon_slice",
+            "count": 3
+          }
+        }
+      ]
+    },
+    {
+      "profession": "fisherman",
+      "level": 1,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/fisherman/level_1",
+      "trades": [
+        {
+          "id": "fisherman/1/string_emerald",
+          "wants": {
+            "item": "string",
+            "count": 20,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "fisherman/1/coal_emerald",
+          "wants": {
+            "item": "coal",
+            "count": 10,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "fisherman/1/raw_cod_and_emerald_cooked_cod",
+          "wants": {
+            "item": "cod",
+            "count": 6,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cooked_cod",
+            "count": 6
+          }
+        },
+        {
+          "id": "fisherman/1/emerald_cod_bucket",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cod_bucket",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "fisherman",
+      "level": 2,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/fisherman/level_2",
+      "trades": [
+        {
+          "id": "fisherman/2/cod_emerald",
+          "wants": {
+            "item": "cod",
+            "count": 15,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "fisherman/2/salmon_and_emerald_cooked_salmon",
+          "wants": {
+            "item": "salmon",
+            "count": 6,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cooked_salmon",
+            "count": 6
+          }
+        },
+        {
+          "id": "fisherman/2/emerald_campfire",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "campfire",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "fisherman",
+      "level": 3,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/fisherman/level_3",
+      "trades": [
+        {
+          "id": "fisherman/3/salmon_emerald",
+          "wants": {
+            "item": "salmon",
+            "count": 13,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "fisherman/3/emerald_enchanted_fishing_rod",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "fishing_rod",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "unbreaking",
+              "luck_of_the_sea",
+              "lure"
+            ],
+            "enchantability": 1,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "fisherman",
+      "level": 4,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/fisherman/level_4",
+      "trades": [
+        {
+          "id": "fisherman/4/tropical_fish_emerald",
+          "wants": {
+            "item": "tropical_fish",
+            "count": 6,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "fisherman",
+      "level": 5,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/fisherman/level_5",
+      "trades": [
+        {
+          "id": "fisherman/5/pufferfish_emerald",
+          "wants": {
+            "item": "pufferfish",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "fisherman/5/oak_boat_emerald",
+          "wants": {
+            "item": "oak_boat",
+            "count": 1,
+            "max_stack": 1
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          },
+          "villager_types": [
+            "plains"
+          ]
+        },
+        {
+          "id": "fisherman/5/spruce_boat_emerald",
+          "wants": {
+            "item": "spruce_boat",
+            "count": 1,
+            "max_stack": 1
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          },
+          "villager_types": [
+            "taiga",
+            "snow"
+          ]
+        },
+        {
+          "id": "fisherman/5/jungle_boat_emerald",
+          "wants": {
+            "item": "jungle_boat",
+            "count": 1,
+            "max_stack": 1
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          },
+          "villager_types": [
+            "desert",
+            "jungle"
+          ]
+        },
+        {
+          "id": "fisherman/5/acacia_boat_emerald",
+          "wants": {
+            "item": "acacia_boat",
+            "count": 1,
+            "max_stack": 1
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          },
+          "villager_types": [
+            "savanna"
+          ]
+        },
+        {
+          "id": "fisherman/5/dark_oak_boat_emerald",
+          "wants": {
+            "item": "dark_oak_boat",
+            "count": 1,
+            "max_stack": 1
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          },
+          "villager_types": [
+            "swamp"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "shepherd",
+      "level": 1,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/shepherd/level_1",
+      "trades": [
+        {
+          "id": "shepherd/1/white_wool_emerald",
+          "wants": {
+            "item": "white_wool",
+            "count": 18,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/1/brown_wool_emerald",
+          "wants": {
+            "item": "brown_wool",
+            "count": 18,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/1/gray_wool_emerald",
+          "wants": {
+            "item": "gray_wool",
+            "count": 18,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/1/black_wool_emerald",
+          "wants": {
+            "item": "black_wool",
+            "count": 18,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/1/emerald_shears",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "shears",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "shepherd",
+      "level": 2,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/shepherd/level_2",
+      "trades": [
+        {
+          "id": "shepherd/2/white_dye_emerald",
+          "wants": {
+            "item": "white_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/gray_dye_emerald",
+          "wants": {
+            "item": "gray_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/black_dye_emerald",
+          "wants": {
+            "item": "black_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/light_blue_dye_emerald",
+          "wants": {
+            "item": "light_blue_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/lime_dye_emerald",
+          "wants": {
+            "item": "lime_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_white_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "white_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_orange_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "orange_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_magenta_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "magenta_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_blue_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "blue_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_light_blue_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "light_blue_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_yellow_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "yellow_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_lime_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "lime_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_pink_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "pink_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_gray_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "gray_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_light_gray_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "light_gray_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_cyan_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cyan_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_purple_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "purple_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_brown_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "brown_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_green_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "green_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_red_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "red_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_black_wool",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "black_wool",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_white_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "white_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_orange_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "orange_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_magenta_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "magenta_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_blue_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "blue_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_light_blue_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "light_blue_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_yellow_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "yellow_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_lime_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "lime_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_pink_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "pink_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_gray_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "gray_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_light_gray_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "light_gray_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_cyan_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cyan_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_purple_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "purple_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_brown_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "brown_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_green_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "green_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_red_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "red_carpet",
+            "count": 4
+          }
+        },
+        {
+          "id": "shepherd/2/emerald_black_carpet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "black_carpet",
+            "count": 4
+          }
+        }
+      ]
+    },
+    {
+      "profession": "shepherd",
+      "level": 3,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/shepherd/level_3",
+      "trades": [
+        {
+          "id": "shepherd/3/yellow_dye_emerald",
+          "wants": {
+            "item": "yellow_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/light_gray_dye_emerald",
+          "wants": {
+            "item": "light_gray_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/orange_dye_emerald",
+          "wants": {
+            "item": "orange_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/red_dye_emerald",
+          "wants": {
+            "item": "red_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/pink_dye_emerald",
+          "wants": {
+            "item": "pink_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_white_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "white_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_orange_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "orange_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_magenta_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "magenta_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_blue_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "blue_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_light_blue_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "light_blue_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_yellow_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "yellow_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_lime_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "lime_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_pink_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "pink_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_gray_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "gray_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_light_gray_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "light_gray_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_cyan_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cyan_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_purple_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "purple_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_brown_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "brown_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_green_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "green_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_red_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "red_bed",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/3/emerald_black_bed",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "black_bed",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "shepherd",
+      "level": 4,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/shepherd/level_4",
+      "trades": [
+        {
+          "id": "shepherd/4/brown_dye_emerald",
+          "wants": {
+            "item": "brown_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/purple_dye_emerald",
+          "wants": {
+            "item": "purple_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/blue_dye_emerald",
+          "wants": {
+            "item": "blue_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/green_dye_emerald",
+          "wants": {
+            "item": "green_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/magenta_dye_emerald",
+          "wants": {
+            "item": "magenta_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/cyan_dye_emerald",
+          "wants": {
+            "item": "cyan_dye",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_white_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "white_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_orange_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "orange_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_magenta_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "magenta_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_blue_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "blue_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_light_blue_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "light_blue_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_yellow_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "yellow_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_lime_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "lime_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_pink_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "pink_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_gray_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "gray_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_light_gray_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "light_gray_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_cyan_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cyan_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_purple_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "purple_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_brown_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "brown_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_green_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "green_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_red_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "red_banner",
+            "count": 1
+          }
+        },
+        {
+          "id": "shepherd/4/emerald_black_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "black_banner",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "shepherd",
+      "level": 5,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/shepherd/level_5",
+      "trades": [
+        {
+          "id": "shepherd/5/emerald_painting",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "painting",
+            "count": 3
+          }
+        }
+      ]
+    },
+    {
+      "profession": "fletcher",
+      "level": 1,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/fletcher/level_1",
+      "trades": [
+        {
+          "id": "fletcher/1/stick_emerald",
+          "wants": {
+            "item": "stick",
+            "count": 32,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "fletcher/1/emerald_arrow",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "arrow",
+            "count": 16
+          }
+        },
+        {
+          "id": "fletcher/1/gravel_and_emerald_flint",
+          "wants": {
+            "item": "gravel",
+            "count": 10,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "flint",
+            "count": 10
+          }
+        }
+      ]
+    },
+    {
+      "profession": "fletcher",
+      "level": 2,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/fletcher/level_2",
+      "trades": [
+        {
+          "id": "fletcher/2/flint_emerald",
+          "wants": {
+            "item": "flint",
+            "count": 26,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "fletcher/2/emerald_bow",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "bow",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "fletcher",
+      "level": 3,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/fletcher/level_3",
+      "trades": [
+        {
+          "id": "fletcher/3/string_emerald",
+          "wants": {
+            "item": "string",
+            "count": 14,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "fletcher/3/emerald_crossbow",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "crossbow",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "fletcher",
+      "level": 4,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/fletcher/level_4",
+      "trades": [
+        {
+          "id": "fletcher/4/feather_emerald",
+          "wants": {
+            "item": "feather",
+            "count": 24,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "fletcher/4/emerald_enchanted_bow",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "bow",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "unbreaking",
+              "power",
+              "punch",
+              "flame",
+              "infinity"
+            ],
+            "enchantability": 1,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "fletcher",
+      "level": 5,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/fletcher/level_5",
+      "trades": [
+        {
+          "id": "fletcher/5/tripwire_hook_emerald",
+          "wants": {
+            "item": "tripwire_hook",
+            "count": 8,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "fletcher/5/emerald_enchanted_crossbow",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "crossbow",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "unbreaking",
+              "multishot",
+              "quick_charge",
+              "piercing"
+            ],
+            "enchantability": 1,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        },
+        {
+          "id": "fletcher/5/arrow_and_emerald_tipped_arrow",
+          "wants": {
+            "item": "arrow",
+            "count": 5,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "tipped_arrow",
+            "count": 5
+          },
+          "modifier": {
+            "type": "set_random_potion",
+            "options": [
+              "wind_charged",
+              "oozing",
+              "infested",
+              "weaving",
+              "night_vision",
+              "long_night_vision",
+              "invisibility",
+              "long_invisibility",
+              "fire_resistance",
+              "long_fire_resistance",
+              "leaping",
+              "long_leaping",
+              "strong_leaping",
+              "slowness",
+              "long_slowness",
+              "strong_slowness",
+              "turtle_master",
+              "long_turtle_master",
+              "strong_turtle_master",
+              "swiftness",
+              "long_swiftness",
+              "strong_swiftness",
+              "water_breathing",
+              "long_water_breathing",
+              "healing",
+              "strong_healing",
+              "harming",
+              "strong_harming",
+              "poison",
+              "long_poison",
+              "strong_poison",
+              "regeneration",
+              "long_regeneration",
+              "strong_regeneration",
+              "strength",
+              "long_strength",
+              "strong_strength",
+              "weakness",
+              "long_weakness",
+              "slow_falling",
+              "long_slow_falling"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "profession": "librarian",
+      "level": 1,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/librarian/level_1",
+      "trades": [
+        {
+          "id": "librarian/1/paper_emerald",
+          "wants": {
+            "item": "paper",
+            "count": 24,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "librarian/1/emerald_and_book_enchanted_book",
+          "wants": {
+            "item": "emerald",
+            "count": 0,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "book",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "enchanted_book",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_randomly",
+            "options": [
+              "protection",
+              "fire_protection",
+              "feather_falling",
+              "blast_protection",
+              "projectile_protection",
+              "respiration",
+              "aqua_affinity",
+              "thorns",
+              "depth_strider",
+              "sharpness",
+              "smite",
+              "bane_of_arthropods",
+              "knockback",
+              "fire_aspect",
+              "looting",
+              "sweeping_edge",
+              "efficiency",
+              "silk_touch",
+              "unbreaking",
+              "fortune",
+              "power",
+              "punch",
+              "flame",
+              "infinity",
+              "luck_of_the_sea",
+              "lure",
+              "loyalty",
+              "impaling",
+              "riptide",
+              "channeling",
+              "multishot",
+              "quick_charge",
+              "piercing",
+              "density",
+              "breach",
+              "lunge",
+              "binding_curse",
+              "vanishing_curse",
+              "frost_walker",
+              "mending"
+            ],
+            "additional_cost": true,
+            "double_price": [
+              "binding_curse",
+              "vanishing_curse",
+              "swift_sneak",
+              "soul_speed",
+              "frost_walker",
+              "mending",
+              "wind_burst"
+            ]
+          },
+          "discard_unless": [
+            "stored_enchantments"
+          ]
+        },
+        {
+          "id": "librarian/1/emerald_bookshelf",
+          "wants": {
+            "item": "emerald",
+            "count": 9,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "bookshelf",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "librarian",
+      "level": 2,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/librarian/level_2",
+      "trades": [
+        {
+          "id": "librarian/2/book_emerald",
+          "wants": {
+            "item": "book",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "librarian/2/emerald_and_book_enchanted_book",
+          "wants": {
+            "item": "emerald",
+            "count": 0,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "book",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "enchanted_book",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_randomly",
+            "options": [
+              "protection",
+              "fire_protection",
+              "feather_falling",
+              "blast_protection",
+              "projectile_protection",
+              "respiration",
+              "aqua_affinity",
+              "thorns",
+              "depth_strider",
+              "sharpness",
+              "smite",
+              "bane_of_arthropods",
+              "knockback",
+              "fire_aspect",
+              "looting",
+              "sweeping_edge",
+              "efficiency",
+              "silk_touch",
+              "unbreaking",
+              "fortune",
+              "power",
+              "punch",
+              "flame",
+              "infinity",
+              "luck_of_the_sea",
+              "lure",
+              "loyalty",
+              "impaling",
+              "riptide",
+              "channeling",
+              "multishot",
+              "quick_charge",
+              "piercing",
+              "density",
+              "breach",
+              "lunge",
+              "binding_curse",
+              "vanishing_curse",
+              "frost_walker",
+              "mending"
+            ],
+            "additional_cost": true,
+            "double_price": [
+              "binding_curse",
+              "vanishing_curse",
+              "swift_sneak",
+              "soul_speed",
+              "frost_walker",
+              "mending",
+              "wind_burst"
+            ]
+          },
+          "discard_unless": [
+            "stored_enchantments"
+          ]
+        },
+        {
+          "id": "librarian/2/emerald_lantern",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "lantern",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "librarian",
+      "level": 3,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/librarian/level_3",
+      "trades": [
+        {
+          "id": "librarian/3/ink_sac_emerald",
+          "wants": {
+            "item": "ink_sac",
+            "count": 5,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "librarian/3/emerald_and_book_enchanted_book",
+          "wants": {
+            "item": "emerald",
+            "count": 0,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "book",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "enchanted_book",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_randomly",
+            "options": [
+              "protection",
+              "fire_protection",
+              "feather_falling",
+              "blast_protection",
+              "projectile_protection",
+              "respiration",
+              "aqua_affinity",
+              "thorns",
+              "depth_strider",
+              "sharpness",
+              "smite",
+              "bane_of_arthropods",
+              "knockback",
+              "fire_aspect",
+              "looting",
+              "sweeping_edge",
+              "efficiency",
+              "silk_touch",
+              "unbreaking",
+              "fortune",
+              "power",
+              "punch",
+              "flame",
+              "infinity",
+              "luck_of_the_sea",
+              "lure",
+              "loyalty",
+              "impaling",
+              "riptide",
+              "channeling",
+              "multishot",
+              "quick_charge",
+              "piercing",
+              "density",
+              "breach",
+              "lunge",
+              "binding_curse",
+              "vanishing_curse",
+              "frost_walker",
+              "mending"
+            ],
+            "additional_cost": true,
+            "double_price": [
+              "binding_curse",
+              "vanishing_curse",
+              "swift_sneak",
+              "soul_speed",
+              "frost_walker",
+              "mending",
+              "wind_burst"
+            ]
+          },
+          "discard_unless": [
+            "stored_enchantments"
+          ]
+        },
+        {
+          "id": "librarian/3/emerald_glass",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "glass",
+            "count": 4
+          }
+        }
+      ]
+    },
+    {
+      "profession": "librarian",
+      "level": 4,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/librarian/level_4",
+      "trades": [
+        {
+          "id": "librarian/4/writable_book_emerald",
+          "wants": {
+            "item": "writable_book",
+            "count": 2,
+            "max_stack": 1
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "librarian/4/emerald_book_and_enchanted_book",
+          "wants": {
+            "item": "emerald",
+            "count": 0,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "book",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "enchanted_book",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_randomly",
+            "options": [
+              "protection",
+              "fire_protection",
+              "feather_falling",
+              "blast_protection",
+              "projectile_protection",
+              "respiration",
+              "aqua_affinity",
+              "thorns",
+              "depth_strider",
+              "sharpness",
+              "smite",
+              "bane_of_arthropods",
+              "knockback",
+              "fire_aspect",
+              "looting",
+              "sweeping_edge",
+              "efficiency",
+              "silk_touch",
+              "unbreaking",
+              "fortune",
+              "power",
+              "punch",
+              "flame",
+              "infinity",
+              "luck_of_the_sea",
+              "lure",
+              "loyalty",
+              "impaling",
+              "riptide",
+              "channeling",
+              "multishot",
+              "quick_charge",
+              "piercing",
+              "density",
+              "breach",
+              "lunge",
+              "binding_curse",
+              "vanishing_curse",
+              "frost_walker",
+              "mending"
+            ],
+            "additional_cost": true,
+            "double_price": [
+              "binding_curse",
+              "vanishing_curse",
+              "swift_sneak",
+              "soul_speed",
+              "frost_walker",
+              "mending",
+              "wind_burst"
+            ]
+          },
+          "discard_unless": [
+            "stored_enchantments"
+          ]
+        },
+        {
+          "id": "librarian/4/emerald_clock",
+          "wants": {
+            "item": "emerald",
+            "count": 5,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "clock",
+            "count": 1
+          }
+        },
+        {
+          "id": "librarian/4/emerald_compass",
+          "wants": {
+            "item": "emerald",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "compass",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "librarian",
+      "level": 5,
+      "amount": 3,
+      "random_sequence": "minecraft:trade_set/librarian/level_5",
+      "trades": [
+        {
+          "id": "librarian/5/emerald_yellow_candle",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "yellow_candle",
+            "count": 1
+          }
+        },
+        {
+          "id": "librarian/5/emerald_red_candle",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "red_candle",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "cartographer",
+      "level": 1,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/cartographer/level_1",
+      "trades": [
+        {
+          "id": "cartographer/1/paper_emerald",
+          "wants": {
+            "item": "paper",
+            "count": 24,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "cartographer/1/emerald_map",
+          "wants": {
+            "item": "emerald",
+            "count": 7,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "map",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "cartographer",
+      "level": 2,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/cartographer/level_2",
+      "trades": [
+        {
+          "id": "cartographer/2/glass_pane_emerald",
+          "wants": {
+            "item": "glass_pane",
+            "count": 11,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "cartographer/2/emerald_and_compass_village_taiga_map",
+          "wants": {
+            "item": "emerald",
+            "count": 8,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "compass",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "map",
+            "count": 1
+          },
+          "villager_types": [
+            "swamp",
+            "snow",
+            "plains"
+          ],
+          "modifier": {
+            "type": "exploration_map",
+            "destination": "on_taiga_village_maps"
+          },
+          "discard_unless": [
+            "map_id"
+          ]
+        },
+        {
+          "id": "cartographer/2/emerald_and_compass_explorer_swamp_map",
+          "wants": {
+            "item": "emerald",
+            "count": 8,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "compass",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "map",
+            "count": 1
+          },
+          "villager_types": [
+            "taiga",
+            "snow",
+            "jungle"
+          ],
+          "modifier": {
+            "type": "exploration_map",
+            "destination": "on_swamp_explorer_maps"
+          },
+          "discard_unless": [
+            "map_id"
+          ]
+        },
+        {
+          "id": "cartographer/2/emerald_and_compass_village_snowy_map",
+          "wants": {
+            "item": "emerald",
+            "count": 8,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "compass",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "map",
+            "count": 1
+          },
+          "villager_types": [
+            "taiga",
+            "swamp"
+          ],
+          "modifier": {
+            "type": "exploration_map",
+            "destination": "on_snowy_village_maps"
+          },
+          "discard_unless": [
+            "map_id"
+          ]
+        },
+        {
+          "id": "cartographer/2/emerald_and_compass_village_savanna_map",
+          "wants": {
+            "item": "emerald",
+            "count": 8,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "compass",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "map",
+            "count": 1
+          },
+          "villager_types": [
+            "plains",
+            "jungle",
+            "desert"
+          ],
+          "modifier": {
+            "type": "exploration_map",
+            "destination": "on_savanna_village_maps"
+          },
+          "discard_unless": [
+            "map_id"
+          ]
+        },
+        {
+          "id": "cartographer/2/emerald_and_compass_village_plains_map",
+          "wants": {
+            "item": "emerald",
+            "count": 8,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "compass",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "map",
+            "count": 1
+          },
+          "villager_types": [
+            "taiga",
+            "snow",
+            "savanna",
+            "desert"
+          ],
+          "modifier": {
+            "type": "exploration_map",
+            "destination": "on_plains_village_maps"
+          },
+          "discard_unless": [
+            "map_id"
+          ]
+        },
+        {
+          "id": "cartographer/2/emerald_and_compass_explorer_jungle_map",
+          "wants": {
+            "item": "emerald",
+            "count": 8,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "compass",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "map",
+            "count": 1
+          },
+          "villager_types": [
+            "swamp",
+            "savanna",
+            "desert"
+          ],
+          "modifier": {
+            "type": "exploration_map",
+            "destination": "on_jungle_explorer_maps"
+          },
+          "discard_unless": [
+            "map_id"
+          ]
+        },
+        {
+          "id": "cartographer/2/emerald_and_compass_village_desert_map",
+          "wants": {
+            "item": "emerald",
+            "count": 8,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "compass",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "map",
+            "count": 1
+          },
+          "villager_types": [
+            "savanna",
+            "jungle"
+          ],
+          "modifier": {
+            "type": "exploration_map",
+            "destination": "on_desert_village_maps"
+          },
+          "discard_unless": [
+            "map_id"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "cartographer",
+      "level": 3,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/cartographer/level_3",
+      "trades": [
+        {
+          "id": "cartographer/3/compass_emerald",
+          "wants": {
+            "item": "compass",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "cartographer/3/emerald_and_compass_ocean_explorer_map",
+          "wants": {
+            "item": "emerald",
+            "count": 13,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "compass",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "map",
+            "count": 1
+          },
+          "modifier": {
+            "type": "exploration_map",
+            "destination": "on_ocean_explorer_maps"
+          },
+          "discard_unless": [
+            "map_id"
+          ]
+        },
+        {
+          "id": "cartographer/3/emerald_and_compass_trial_chamber_map",
+          "wants": {
+            "item": "emerald",
+            "count": 12,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "compass",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "map",
+            "count": 1
+          },
+          "modifier": {
+            "type": "exploration_map",
+            "destination": "on_trial_chambers_maps"
+          },
+          "discard_unless": [
+            "map_id"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "cartographer",
+      "level": 4,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/cartographer/level_4",
+      "trades": [
+        {
+          "id": "cartographer/4/emerald_item_frame",
+          "wants": {
+            "item": "emerald",
+            "count": 7,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "item_frame",
+            "count": 1
+          }
+        },
+        {
+          "id": "cartographer/4/emerald_white_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "white_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "snow",
+            "plains"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_orange_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "orange_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "savanna",
+            "desert"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_magenta_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "magenta_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "savanna"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_blue_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "blue_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "snow",
+            "taiga"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_light_blue_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "light_blue_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "snow",
+            "swamp"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_yellow_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "yellow_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "plains",
+            "jungle"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_lime_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "lime_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "desert",
+            "taiga"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_pink_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "pink_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "taiga",
+            "plains"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_gray_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "gray_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "desert"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_cyan_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cyan_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "desert",
+            "snow"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_purple_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "purple_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "taiga",
+            "swamp"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_brown_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "brown_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "plains",
+            "jungle"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_green_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "green_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "desert",
+            "savanna",
+            "jungle"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_red_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "red_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "snow",
+            "savanna"
+          ]
+        },
+        {
+          "id": "cartographer/4/emerald_black_banner",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "black_banner",
+            "count": 1
+          },
+          "villager_types": [
+            "swamp"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "cartographer",
+      "level": 5,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/cartographer/level_5",
+      "trades": [
+        {
+          "id": "cartographer/5/emerald_globe_banner_pattern",
+          "wants": {
+            "item": "emerald",
+            "count": 8,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "globe_banner_pattern",
+            "count": 1
+          }
+        },
+        {
+          "id": "cartographer/5/emerald_and_compass_woodland_mansion_map",
+          "wants": {
+            "item": "emerald",
+            "count": 14,
+            "max_stack": 64
+          },
+          "additional_wants": {
+            "item": "compass",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "map",
+            "count": 1
+          },
+          "modifier": {
+            "type": "exploration_map",
+            "destination": "on_woodland_explorer_maps"
+          },
+          "discard_unless": [
+            "map_id"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "cleric",
+      "level": 1,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/cleric/level_1",
+      "trades": [
+        {
+          "id": "cleric/1/rotten_flesh_emerald",
+          "wants": {
+            "item": "rotten_flesh",
+            "count": 32,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "cleric/1/emerald_redstone",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "redstone",
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "profession": "cleric",
+      "level": 2,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/cleric/level_2",
+      "trades": [
+        {
+          "id": "cleric/2/gold_ingot_emerald",
+          "wants": {
+            "item": "gold_ingot",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "cleric/2/emerald_lapis_lazuli",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "lapis_lazuli",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "cleric",
+      "level": 3,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/cleric/level_3",
+      "trades": [
+        {
+          "id": "cleric/3/rabbit_foot_emerald",
+          "wants": {
+            "item": "rabbit_foot",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "cleric/3/emerald_glowstone",
+          "wants": {
+            "item": "emerald",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "glowstone",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "cleric",
+      "level": 4,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/cleric/level_4",
+      "trades": [
+        {
+          "id": "cleric/4/turtle_scute_emerald",
+          "wants": {
+            "item": "turtle_scute",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "cleric/4/glass_bottle_emerald",
+          "wants": {
+            "item": "glass_bottle",
+            "count": 9,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "cleric/4/emerald_ender_pearl",
+          "wants": {
+            "item": "emerald",
+            "count": 5,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "ender_pearl",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "cleric",
+      "level": 5,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/cleric/level_5",
+      "trades": [
+        {
+          "id": "cleric/5/nether_wart_emerald",
+          "wants": {
+            "item": "nether_wart",
+            "count": 22,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "cleric/5/emerald_experience_bottle",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "experience_bottle",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "armorer",
+      "level": 1,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/armorer/level_1",
+      "trades": [
+        {
+          "id": "smith/1/coal_emerald",
+          "wants": {
+            "item": "coal",
+            "count": 15,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "armorer/1/emerald_iron_leggings",
+          "wants": {
+            "item": "emerald",
+            "count": 7,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "iron_leggings",
+            "count": 1
+          }
+        },
+        {
+          "id": "armorer/1/emerald_iron_boots",
+          "wants": {
+            "item": "emerald",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "iron_boots",
+            "count": 1
+          }
+        },
+        {
+          "id": "armorer/1/emerald_iron_helmet",
+          "wants": {
+            "item": "emerald",
+            "count": 5,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "iron_helmet",
+            "count": 1
+          }
+        },
+        {
+          "id": "armorer/1/emerald_iron_chestplate",
+          "wants": {
+            "item": "emerald",
+            "count": 9,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "iron_chestplate",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "armorer",
+      "level": 2,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/armorer/level_2",
+      "trades": [
+        {
+          "id": "smith/2/iron_ingot_emerald",
+          "wants": {
+            "item": "iron_ingot",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "smith/2/emerald_bell",
+          "wants": {
+            "item": "emerald",
+            "count": 36,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "bell",
+            "count": 1
+          }
+        },
+        {
+          "id": "armorer/2/emerald_chainmail_boots",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "chainmail_boots",
+            "count": 1
+          }
+        },
+        {
+          "id": "armorer/2/emerald_chainmail_leggings",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "chainmail_leggings",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "armorer",
+      "level": 3,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/armorer/level_3",
+      "trades": [
+        {
+          "id": "armorer/3/lava_bucket_emerald",
+          "wants": {
+            "item": "lava_bucket",
+            "count": 1,
+            "max_stack": 1
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "armorer/3/emerald_chainmail_helmet",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "chainmail_helmet",
+            "count": 1
+          }
+        },
+        {
+          "id": "armorer/3/emerald_chainmail_chestplate",
+          "wants": {
+            "item": "emerald",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "chainmail_chestplate",
+            "count": 1
+          }
+        },
+        {
+          "id": "armorer/3/emerald_shield",
+          "wants": {
+            "item": "emerald",
+            "count": 5,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "shield",
+            "count": 1
+          }
+        },
+        {
+          "id": "armorer/3/diamond_emerald",
+          "wants": {
+            "item": "diamond",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "armorer",
+      "level": 4,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/armorer/level_4",
+      "trades": [
+        {
+          "id": "armorer/4/emerald_enchanted_diamond_leggings",
+          "wants": {
+            "item": "emerald",
+            "count": 14,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "diamond_leggings",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "protection",
+              "fire_protection",
+              "blast_protection",
+              "projectile_protection",
+              "unbreaking"
+            ],
+            "enchantability": 10,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        },
+        {
+          "id": "armorer/4/emerald_enchanted_diamond_boots",
+          "wants": {
+            "item": "emerald",
+            "count": 8,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "diamond_boots",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "protection",
+              "fire_protection",
+              "feather_falling",
+              "blast_protection",
+              "projectile_protection",
+              "depth_strider",
+              "unbreaking"
+            ],
+            "enchantability": 10,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "armorer",
+      "level": 5,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/armorer/level_5",
+      "trades": [
+        {
+          "id": "armorer/5/emerald_enchanted_diamond_helmet",
+          "wants": {
+            "item": "emerald",
+            "count": 8,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "diamond_helmet",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "protection",
+              "fire_protection",
+              "blast_protection",
+              "projectile_protection",
+              "respiration",
+              "aqua_affinity",
+              "unbreaking"
+            ],
+            "enchantability": 10,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        },
+        {
+          "id": "armorer/5/emerald_enchanted_diamond_chestplate",
+          "wants": {
+            "item": "emerald",
+            "count": 16,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "diamond_chestplate",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "protection",
+              "fire_protection",
+              "blast_protection",
+              "projectile_protection",
+              "thorns",
+              "unbreaking"
+            ],
+            "enchantability": 10,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "weaponsmith",
+      "level": 1,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/weaponsmith/level_1",
+      "trades": [
+        {
+          "id": "smith/1/coal_emerald",
+          "wants": {
+            "item": "coal",
+            "count": 15,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "weaponsmith/1/emerald_iron_axe",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "iron_axe",
+            "count": 1
+          }
+        },
+        {
+          "id": "weaponsmith/1/emerald_enchanted_iron_sword",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "iron_sword",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "sharpness",
+              "smite",
+              "bane_of_arthropods",
+              "knockback",
+              "fire_aspect",
+              "looting",
+              "sweeping_edge",
+              "unbreaking"
+            ],
+            "enchantability": 14,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "weaponsmith",
+      "level": 2,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/weaponsmith/level_2",
+      "trades": [
+        {
+          "id": "smith/2/iron_ingot_emerald",
+          "wants": {
+            "item": "iron_ingot",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "smith/2/emerald_bell",
+          "wants": {
+            "item": "emerald",
+            "count": 36,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "bell",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "weaponsmith",
+      "level": 3,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/weaponsmith/level_3",
+      "trades": [
+        {
+          "id": "weaponsmith/3/flint_emerald",
+          "wants": {
+            "item": "flint",
+            "count": 24,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "weaponsmith",
+      "level": 4,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/weaponsmith/level_4",
+      "trades": [
+        {
+          "id": "weaponsmith/4/emerald_enchanted_diamond_axe",
+          "wants": {
+            "item": "emerald",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "diamond_axe",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "efficiency",
+              "silk_touch",
+              "unbreaking",
+              "fortune"
+            ],
+            "enchantability": 10,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        },
+        {
+          "id": "weaponsmith/4/diamond_emerald",
+          "wants": {
+            "item": "diamond",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "weaponsmith",
+      "level": 5,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/weaponsmith/level_5",
+      "trades": [
+        {
+          "id": "weaponsmith/5/emerald_enchanted_diamond_sword",
+          "wants": {
+            "item": "emerald",
+            "count": 8,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "diamond_sword",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "sharpness",
+              "smite",
+              "bane_of_arthropods",
+              "knockback",
+              "fire_aspect",
+              "looting",
+              "sweeping_edge",
+              "unbreaking"
+            ],
+            "enchantability": 10,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "toolsmith",
+      "level": 1,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/toolsmith/level_1",
+      "trades": [
+        {
+          "id": "smith/1/coal_emerald",
+          "wants": {
+            "item": "coal",
+            "count": 15,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "toolsmith/1/emerald_stone_axe",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "stone_axe",
+            "count": 1
+          }
+        },
+        {
+          "id": "toolsmith/1/emerald_stone_shovel",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "stone_shovel",
+            "count": 1
+          }
+        },
+        {
+          "id": "toolsmith/1/emerald_stone_pickaxe",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "stone_pickaxe",
+            "count": 1
+          }
+        },
+        {
+          "id": "toolsmith/1/emerald_stone_hoe",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "stone_hoe",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "toolsmith",
+      "level": 2,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/toolsmith/level_2",
+      "trades": [
+        {
+          "id": "smith/2/iron_ingot_emerald",
+          "wants": {
+            "item": "iron_ingot",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "smith/2/emerald_bell",
+          "wants": {
+            "item": "emerald",
+            "count": 36,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "bell",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "toolsmith",
+      "level": 3,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/toolsmith/level_3",
+      "trades": [
+        {
+          "id": "toolsmith/3/flint_emerald",
+          "wants": {
+            "item": "flint",
+            "count": 30,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "toolsmith/3/emerald_enchanted_iron_axe",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "iron_axe",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "efficiency",
+              "silk_touch",
+              "unbreaking",
+              "fortune"
+            ],
+            "enchantability": 14,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        },
+        {
+          "id": "toolsmith/3/emerald_enchanted_iron_shovel",
+          "wants": {
+            "item": "emerald",
+            "count": 2,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "iron_shovel",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "efficiency",
+              "silk_touch",
+              "unbreaking",
+              "fortune"
+            ],
+            "enchantability": 14,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        },
+        {
+          "id": "toolsmith/3/emerald_enchanted_iron_pickaxe",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "iron_pickaxe",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "efficiency",
+              "silk_touch",
+              "unbreaking",
+              "fortune"
+            ],
+            "enchantability": 14,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        },
+        {
+          "id": "toolsmith/3/emerald_diamond_hoe",
+          "wants": {
+            "item": "emerald",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "diamond_hoe",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "toolsmith",
+      "level": 4,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/toolsmith/level_4",
+      "trades": [
+        {
+          "id": "toolsmith/4/emerald_enchanted_diamond_axe",
+          "wants": {
+            "item": "emerald",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "diamond_axe",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "efficiency",
+              "silk_touch",
+              "unbreaking",
+              "fortune"
+            ],
+            "enchantability": 10,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        },
+        {
+          "id": "toolsmith/4/emerald_enchanted_diamond_shovel",
+          "wants": {
+            "item": "emerald",
+            "count": 5,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "diamond_shovel",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "efficiency",
+              "silk_touch",
+              "unbreaking",
+              "fortune"
+            ],
+            "enchantability": 10,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        },
+        {
+          "id": "toolsmith/4/diamond_emerald",
+          "wants": {
+            "item": "diamond",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "toolsmith",
+      "level": 5,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/toolsmith/level_5",
+      "trades": [
+        {
+          "id": "toolsmith/5/emerald_enchanted_diamond_pickaxe",
+          "wants": {
+            "item": "emerald",
+            "count": 13,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "diamond_pickaxe",
+            "count": 1
+          },
+          "modifier": {
+            "type": "enchant_with_levels",
+            "levels": {
+              "type": "uniform",
+              "min": 5,
+              "max": 19
+            },
+            "options": [
+              "efficiency",
+              "silk_touch",
+              "unbreaking",
+              "fortune"
+            ],
+            "enchantability": 10,
+            "additional_cost": true
+          },
+          "discard_unless": [
+            "enchantments"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "butcher",
+      "level": 1,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/butcher/level_1",
+      "trades": [
+        {
+          "id": "butcher/1/chicken_emerald",
+          "wants": {
+            "item": "chicken",
+            "count": 14,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "butcher/1/porkchop_emerald",
+          "wants": {
+            "item": "porkchop",
+            "count": 7,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "butcher/1/rabbit_emerald",
+          "wants": {
+            "item": "rabbit",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "butcher/1/emerald_rabbit_stew",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "rabbit_stew",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "butcher",
+      "level": 2,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/butcher/level_2",
+      "trades": [
+        {
+          "id": "butcher/2/coal_emerald",
+          "wants": {
+            "item": "coal",
+            "count": 15,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "butcher/2/emerald_cooked_porkchop",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cooked_porkchop",
+            "count": 5
+          }
+        },
+        {
+          "id": "butcher/2/emerald_cooked_chicken",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cooked_chicken",
+            "count": 8
+          }
+        }
+      ]
+    },
+    {
+      "profession": "butcher",
+      "level": 3,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/butcher/level_3",
+      "trades": [
+        {
+          "id": "butcher/3/mutton_emerald",
+          "wants": {
+            "item": "mutton",
+            "count": 7,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "butcher/3/beef_emerald",
+          "wants": {
+            "item": "beef",
+            "count": 10,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "butcher",
+      "level": 4,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/butcher/level_4",
+      "trades": [
+        {
+          "id": "butcher/4/dried_kelp_block_emerald",
+          "wants": {
+            "item": "dried_kelp_block",
+            "count": 10,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "butcher",
+      "level": 5,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/butcher/level_5",
+      "trades": [
+        {
+          "id": "butcher/5/sweet_berries_emerald",
+          "wants": {
+            "item": "sweet_berries",
+            "count": 10,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "leatherworker",
+      "level": 1,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/leatherworker/level_1",
+      "trades": [
+        {
+          "id": "leatherworker/1/leather_emerald",
+          "wants": {
+            "item": "leather",
+            "count": 6,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "leatherworker/1/emerald_dyed_leather_leggings",
+          "wants": {
+            "item": "emerald",
+            "count": 3,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "leather_leggings",
+            "count": 1
+          },
+          "modifier": {
+            "type": "set_random_dyes",
+            "count": {
+              "type": "sum",
+              "values": [
+                {
+                  "type": "constant",
+                  "value": 1
+                },
+                {
+                  "type": "binomial",
+                  "n": 2,
+                  "p": 0.75
+                }
+              ]
+            }
+          },
+          "discard_unless": [
+            "dyed_color"
+          ]
+        },
+        {
+          "id": "leatherworker/1/emerald_dyed_leather_chestplate",
+          "wants": {
+            "item": "emerald",
+            "count": 7,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "leather_chestplate",
+            "count": 1
+          },
+          "modifier": {
+            "type": "set_random_dyes",
+            "count": {
+              "type": "sum",
+              "values": [
+                {
+                  "type": "constant",
+                  "value": 1
+                },
+                {
+                  "type": "binomial",
+                  "n": 2,
+                  "p": 0.75
+                }
+              ]
+            }
+          },
+          "discard_unless": [
+            "dyed_color"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "leatherworker",
+      "level": 2,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/leatherworker/level_2",
+      "trades": [
+        {
+          "id": "leatherworker/2/flint_emerald",
+          "wants": {
+            "item": "flint",
+            "count": 26,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "leatherworker/2/emerald_dyed_leather_helmet",
+          "wants": {
+            "item": "emerald",
+            "count": 5,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "leather_helmet",
+            "count": 1
+          },
+          "modifier": {
+            "type": "set_random_dyes",
+            "count": {
+              "type": "sum",
+              "values": [
+                {
+                  "type": "constant",
+                  "value": 1
+                },
+                {
+                  "type": "binomial",
+                  "n": 2,
+                  "p": 0.75
+                }
+              ]
+            }
+          },
+          "discard_unless": [
+            "dyed_color"
+          ]
+        },
+        {
+          "id": "leatherworker/2/emerald_dyed_leather_boots",
+          "wants": {
+            "item": "emerald",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "leather_boots",
+            "count": 1
+          },
+          "modifier": {
+            "type": "set_random_dyes",
+            "count": {
+              "type": "sum",
+              "values": [
+                {
+                  "type": "constant",
+                  "value": 1
+                },
+                {
+                  "type": "binomial",
+                  "n": 2,
+                  "p": 0.75
+                }
+              ]
+            }
+          },
+          "discard_unless": [
+            "dyed_color"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "leatherworker",
+      "level": 3,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/leatherworker/level_3",
+      "trades": [
+        {
+          "id": "leatherworker/3/rabbit_hide_emerald",
+          "wants": {
+            "item": "rabbit_hide",
+            "count": 9,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "leatherworker/3/emerald_dyed_leather_chestplate",
+          "wants": {
+            "item": "emerald",
+            "count": 7,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "leather_chestplate",
+            "count": 1
+          },
+          "modifier": {
+            "type": "set_random_dyes",
+            "count": {
+              "type": "sum",
+              "values": [
+                {
+                  "type": "constant",
+                  "value": 1
+                },
+                {
+                  "type": "binomial",
+                  "n": 2,
+                  "p": 0.75
+                }
+              ]
+            }
+          },
+          "discard_unless": [
+            "dyed_color"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "leatherworker",
+      "level": 4,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/leatherworker/level_4",
+      "trades": [
+        {
+          "id": "leatherworker/4/turtle_scute_emerald",
+          "wants": {
+            "item": "turtle_scute",
+            "count": 4,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "leatherworker/4/emerald_dyed_leather_horse_armor",
+          "wants": {
+            "item": "emerald",
+            "count": 6,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "leather_horse_armor",
+            "count": 1
+          },
+          "modifier": {
+            "type": "set_random_dyes",
+            "count": {
+              "type": "sum",
+              "values": [
+                {
+                  "type": "constant",
+                  "value": 1
+                },
+                {
+                  "type": "binomial",
+                  "n": 2,
+                  "p": 0.75
+                }
+              ]
+            }
+          },
+          "discard_unless": [
+            "dyed_color"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "leatherworker",
+      "level": 5,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/leatherworker/level_5",
+      "trades": [
+        {
+          "id": "leatherworker/5/emerald_saddle",
+          "wants": {
+            "item": "emerald",
+            "count": 6,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "saddle",
+            "count": 1
+          }
+        },
+        {
+          "id": "leatherworker/5/emerald_dyed_leather_helmet",
+          "wants": {
+            "item": "emerald",
+            "count": 5,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "leather_helmet",
+            "count": 1
+          },
+          "modifier": {
+            "type": "set_random_dyes",
+            "count": {
+              "type": "sum",
+              "values": [
+                {
+                  "type": "constant",
+                  "value": 1
+                },
+                {
+                  "type": "binomial",
+                  "n": 2,
+                  "p": 0.75
+                }
+              ]
+            }
+          },
+          "discard_unless": [
+            "dyed_color"
+          ]
+        }
+      ]
+    },
+    {
+      "profession": "mason",
+      "level": 1,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/mason/level_1",
+      "trades": [
+        {
+          "id": "mason/1/clay_ball_emerald",
+          "wants": {
+            "item": "clay_ball",
+            "count": 10,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/1/emerald_brick",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "brick",
+            "count": 10
+          }
+        }
+      ]
+    },
+    {
+      "profession": "mason",
+      "level": 2,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/mason/level_2",
+      "trades": [
+        {
+          "id": "mason/2/stone_emerald",
+          "wants": {
+            "item": "stone",
+            "count": 20,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/2/emerald_chiseled_stone_bricks",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "chiseled_stone_bricks",
+            "count": 4
+          }
+        }
+      ]
+    },
+    {
+      "profession": "mason",
+      "level": 3,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/mason/level_3",
+      "trades": [
+        {
+          "id": "mason/3/granite_emerald",
+          "wants": {
+            "item": "granite",
+            "count": 16,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/3/andesite_emerald",
+          "wants": {
+            "item": "andesite",
+            "count": 16,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/3/diorite_emerald",
+          "wants": {
+            "item": "diorite",
+            "count": 16,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/3/emerald_dripstone_block",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "dripstone_block",
+            "count": 4
+          }
+        },
+        {
+          "id": "mason/3/emerald_polished_andesite",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "polished_andesite",
+            "count": 4
+          }
+        },
+        {
+          "id": "mason/3/emerald_polished_diorite",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "polished_diorite",
+            "count": 4
+          }
+        },
+        {
+          "id": "mason/3/emerald_polished_granite",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "polished_granite",
+            "count": 4
+          }
+        }
+      ]
+    },
+    {
+      "profession": "mason",
+      "level": 4,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/mason/level_4",
+      "trades": [
+        {
+          "id": "mason/4/quartz_emerald",
+          "wants": {
+            "item": "quartz",
+            "count": 12,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "emerald",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_orange_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "orange_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_white_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "white_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_blue_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "blue_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_light_blue_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "light_blue_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_gray_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "gray_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_light_gray_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "light_gray_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_black_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "black_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_red_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "red_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_pink_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "pink_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_magenta_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "magenta_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_lime_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "lime_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_green_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "green_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_cyan_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cyan_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_purple_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "purple_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_yellow_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "yellow_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_brown_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "brown_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_orange_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "orange_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_white_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "white_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_blue_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "blue_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_light_blue_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "light_blue_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_gray_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "gray_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_light_gray_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "light_gray_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_black_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "black_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_red_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "red_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_pink_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "pink_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_magenta_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "magenta_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_lime_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "lime_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_green_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "green_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_cyan_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "cyan_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_purple_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "purple_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_yellow_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "yellow_glazed_terracotta",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/4/emerald_brown_glazed_terracotta",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "brown_glazed_terracotta",
+            "count": 1
+          }
+        }
+      ]
+    },
+    {
+      "profession": "mason",
+      "level": 5,
+      "amount": 2,
+      "random_sequence": "minecraft:trade_set/mason/level_5",
+      "trades": [
+        {
+          "id": "mason/5/emerald_quartz_pillar",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "quartz_pillar",
+            "count": 1
+          }
+        },
+        {
+          "id": "mason/5/emerald_quartz_block",
+          "wants": {
+            "item": "emerald",
+            "count": 1,
+            "max_stack": 64
+          },
+          "gives": {
+            "item": "quartz_block",
+            "count": 1
+          }
+        }
+      ]
+    }
+  ]
+}
